@@ -124,10 +124,10 @@ function dateFunction(arg){
 
 function inFunc_printVikingLottoWinningRows(){
     for(let u=0; u < winningVikingRow.length;u++){
-        let rowString = winningVikingRow[u];
-        rowString = rowString.toString().replace(/\,/gi, " - ");
-        
-        console.log("Winning Row: " + rowString);
+        //let rowString = winningVikingRow[u];
+        //rowString = rowString.toString().replace(/\,/gi, " - ");
+        //console.log("Winning Row: " + rowString);
+        console.log("Winning Row: " + winningVikingRow[u].toString().replace(/\,/gi, " - "));
     }
 }
 
@@ -165,12 +165,13 @@ function menu(){
   "lookUpStats(MenuArg, arg to the list) - 0 to get list menu\n\n");
 }
 //eks
-menu();
-lookUpStats(0);
-lookUpStats(3);
-lookUpStats(1,24);
+//menu();
+//lookUpStats(0);
+//lookUpStats(3);
+//lookUpStats(1,24);
 //lookUpStats(2,1);
-lookUpStats(2,2);
+//lookUpStats(2,2);
+inFunc_printVikingLottoWinningRows();
 
 
 
