@@ -249,7 +249,21 @@ function inFunc_setVikingLottoWinningRowToFreq(n_1, n_2, n_3, n_4, n_5, n_6, n_7
 
 function inFunc_setsFrequenseOfSets(){
     // use winningVikingRow
-    // eks 
+    // eks (15,48,24,42,7,13,2)
+    /**
+     * Number
+     *  15 {=> After 48}
+     *  48 {<= Befor 15 => After 24}
+     *  24 {<= Befor 48 => After 42}
+     *  42 {<= Befor 24 => After 7}
+     *  7 {<= Befor 42 => After 13}
+     *  2 = VikingNumber
+     * 
+     *  Array[index] = NumberValue;
+     *  Array[index - 1] = Befor != Null of index
+     *  Array[index + 1] = After != 5 of index , index 6 = VikingNumber
+     * 
+     */
     test_numberSetsFrequensVikingTall(24,2,33);
 }
 
@@ -317,14 +331,16 @@ function menu(){
 //eks
 menu();
 lookUpStats(0);
-test_numberSetsFrequensVikingTall(24,2,33);
+test_numberSetsFrequensVikingTall(24,19,27); // Value - b - A 
+test_numberSetsFrequensVikingTall(24,48,42);
+test_numberSetsFrequensVikingTall(24,33,2);
 printLookUpFreqOfaMainNumber(24);
 
 
 
 
 //lookUpStats(3);
-//lookUpStats(1,24);
+lookUpStats(1,24);
 //lookUpStats(2,1);
 //lookUpStats(2,2);
 
