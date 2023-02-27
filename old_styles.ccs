@@ -1,0 +1,149 @@
+.button {
+        background-color: hsl(249, 4%, 61%);
+        border: 1px;
+        display: inline-block;
+        color: white;
+        height: 50px;
+        width: 50px;
+        cursor: pointer;
+}
+button:hover {
+    background: #777555;
+}
+.button1 {border-radius: 50%;}
+.button2 {border-radius: 20px;}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  //height: 50%;
+  width: 50%;
+  gap: 3px;
+  background-color: #2196F3;
+  padding: 5px;
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 10px 10px;
+  font-size: 30px;
+}
+
+.table {
+    width: 100%;
+    margin-bottom: 40px;
+}
+.address, .alert, .box, .calculator, .casinos, .head-box, .map, .result, .sitemap, .table, .table-wrap, table {
+    box-shadow: 0 0 40px rgb(26 26 26 / 25%);
+    border-radius: 15px;
+    overflow: hidden;
+}
+*, :after, :before {
+    box-sizing: border-box;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+user agent stylesheet
+div {
+    display: block;
+}
+body {
+    scroll-behavior: smooth;
+    background: #f7f7f7;
+    font-family: Rubik,sans-serif;
+    font-size: 16px;
+    color: #1a1a1a;
+    -webkit-text-size-adjust: none;
+}
+*, :after, :before {
+    box-sizing: border-box;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+*, :after, :before {
+    box-sizing: border-box;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.ball {
+  height: 30px;
+  width: 30px;
+  display: table-cell;
+  text-align: center;
+  color: white;
+  vertical-align: middle;
+  border-radius: 50%; /* may require vendor prefixes */
+  background: blue;
+  cursor: pointer;
+}
+
+.ul-reset>li {
+    margin: 0;
+}
+li {
+    margin: 15px 0;
+}
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+.ul-reset {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body {
+    scroll-behavior: smooth;
+    background: #f7f7f7;
+    font-family: Rubik,sans-serif;
+    font-size: 16px;
+    color: #1a1a1a;
+    -webkit-text-size-adjust: none;
+}
+body, html {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+body, html {
+    padding: 0;
+    margin: 0;
+}
+*, :after, :before {
+    box-sizing: border-box;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+user agent stylesheet
+body {
+    display: block;
+    margin: 8px;
+}
+*, :after, :before {
+    box-sizing: border-box;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+*, :after, :before {
+    box-sizing: border-box;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+/*
+button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 4rem;
+  width: 10rem;
+  font-size: 1.5rem;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 1px 1px 5px black;
+  background-color: white;
+}
+*/

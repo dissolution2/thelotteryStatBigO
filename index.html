@@ -1,12 +1,1018 @@
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+		@font-face {
+			font-family: rubik; font-style: normal; font-display: swap;
+			src: url(/fonts/rubik.woff2) format("woff2"), url(/fonts/rubik.woff) format("woff"), url(/fonts/rubik.ttf) format("truetype");
+		}
+
+        div.polaroid {
+  width: 250px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+}
+
+div.container {
+  padding: 10px;
+}
+	</style>
+    <!-- <link href="styles.ccs" rel="stylesheet"> -->
+    <link href="style.ccs" rel="stylesheet"> 
     <title>Document</title>
-    <script src="vikingLottoScript.js"></script>
 </head>
 <body>
+    <p>Html with ccs styling</p>
+    <div class="content shadow-none p-3 mb-5 bg-light rounded">No shadow</div>
+    <p></p>
+    <div class="content shadow-sm p-3 mb-5 bg-white rounded">Small shadow</div>
+    <p></p>
+    <div class="content shadow p-3 mb-5 bg-white rounded">Regular shadow</div>
+    <p></p>
+    <div class="content shadow-lg p-3 mb-5 bg-white rounded">Larger shadow</div>
+    <p></p>
+    <div class="polaroid">
+        <img src="rock600x400.jpg" alt="Norway" style="width:100%">
+        <div class="container">
+        <p>Hardanger 1, Norway</p>
+        </div>
+  </div>
+  <p></p>
+    <div class="content shadow-lg p-3 mb-5 bg-white rounded">
+        <div class="polar">
+            <div class="polaroid">
+                <img src="rock600x400.jpg" alt="Norway" style="width:100%">
+                <div class="container">
+                <p>Hardanger 1, Norway</p>
+                </div>
+            </div>
+        </div> 
+        <p></p> 
+        <div class="polaroid">
+            <img src="rock600x400.jpg" alt="Norway" style="width:100%">
+            <div class="container">
+            <p>Hardanger 2, Norway</p>
+            </div>
+      </div>
+    </div>
+      <p></p>
+
+
+    <div id="app" style="height: auto !important; min-height: 0px !important;">
+        <div class="content" style="height: auto !important;">
+<main style="height: auto !important;">
+                
+        <div class="table js-stats-selector" data-lottery="vikinglotto" data-ball="Ball">
+            <div class="thead fx -bt -md">
+                <h2>Hovedtall</h2>
+            </div>
+            <div class="tnav">
+                <div class="fx -md">
+                    <label class="checkbox fx -md">
+                        <img src="view.svg" alt="Visningsmodus">
+                        <div class="_title">Visningsmodus</div>
+                        <input type="checkbox" name="" class="hidden" data-filter="view" data-ol-has-click-handler="">
+                        <div class="_btn -sm">
+                            <div class="_wrap fx -nowrap">
+                                <span>Tabell</span>
+                                <span>Diagram</span>
+                            </div>
+                        </div>
+                    </label>
+                    <label class="checkbox fx -md">
+                        <img src="display.svg" width: 20vw; height: 20vh alt="Vis">
+                        <div class="_title">Vis</div>
+                        <input type="checkbox" name="" class="hidden" data-filter="display" data-ol-has-click-handler="">
+                        <div class="_btn -sm">
+                            <div class="_wrap fx -nowrap">
+                                <span>Frekvens</span>
+                                <span>Dager Siden</span>
+                            </div>
+                        </div>
+                    </label>
+                    <label class="checkbox fx -md">
+                        <img src="order.svg" alt="Sorter etter">
+                        <div class="_title">Sorter etter</div>
+                        <input type="checkbox" name="" class="hidden" data-filter="order" data-ol-has-click-handler="">
+                        <div class="_btn -sm">
+                            <div class="_wrap fx -nowrap">
+                                <span>Tall</span>
+                                <span>Hyppighet</span>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+            </div>
+            <div class="tbody">
+                <ul class="ul-reset stats js-stats">
+                    
+                        <li class="_item js-stats-item" data-num="1" data-freq="6" data-ago="24">
+                            <ul class="balls -vikinglotto -lg">
+                                <li class="ball">1</li>
+                            </ul>
+                            <p class="_times">Trukket <span>6 ganger</span></p>
+                            <p class="_ago">
+                                Sist trukket: 
+                                
+                                    <span>24 dager siden</span>
+                                    <span>3 trekninger siden</span>
+                                    (02.11.2022)
+                                
+                            </p>
+                        </li>
+                    
+                        <li class="_item js-stats-item" data-num="2" data-freq="11" data-ago="59">
+                            <ul class="balls -vikinglotto -lg">
+                                <li class="ball">2</li>
+                            </ul>
+                            <p class="_times">Trukket <span>11 ganger</span></p>
+                            <p class="_ago">
+                                Sist trukket: 
+                                
+                                    <span>59 dager siden</span>
+                                    <span>8 trekninger siden</span>
+                                    (28.09.2022)
+                                
+                            </p>
+                        </li>
+                    
+                        <li class="_item js-stats-item" data-num="3" data-freq="9" data-ago="73">
+                            <ul class="balls -vikinglotto -lg">
+                                <li class="ball">3</li>
+                            </ul>
+                            <p class="_times">Trukket <span>9 ganger</span></p>
+                            <p class="_ago">
+                                Sist trukket: 
+                                
+                                    <span>73 dager siden</span>
+                                    <span>10 trekninger siden</span>
+                                    (14.09.2022)
+                                
+                            </p>
+                        </li>
+                    
+                        <li class="_item js-stats-item" data-num="4" data-freq="4" data-ago="38">
+                            <ul class="balls -vikinglotto -lg">
+                                <li class="ball">4</li>
+                            </ul>
+                            <p class="_times">Trukket <span>4 ganger</span></p>
+                            <p class="_ago">
+                                Sist trukket: 
+                                
+                                    <span>38 dager siden</span>
+                                    <span>5 trekninger siden</span>
+                                    (19.10.2022)
+                                
+                            </p>
+                        </li>
+                    
+                        <li class="_item js-stats-item" data-num="5" data-freq="8" data-ago="3">
+                            <ul class="balls -vikinglotto -lg">
+                                <li class="ball">5</li>
+                            </ul>
+                            <p class="_times">Trukket <span>8 ganger</span></p>
+                            <p class="_ago">
+                                Sist trukket: 
+                                
+                                    <span>3 dager siden</span>
+                                    <span>0 trekninger siden</span>
+                                    (23.11.2022)
+                                
+                            </p>
+                        </li>
+                    
+                        <li class="_item js-stats-item" data-num="6" data-freq="9" data-ago="52">
+                            <ul class="balls -vikinglotto -lg">
+                                <li class="ball">6</li>
+                            </ul>
+                            <p class="_times">Trukket <span>9 ganger</span></p>
+                            <p class="_ago">
+                                Sist trukket: 
+                                
+                                    <span>52 dager siden</span>
+                                    <span>7 trekninger siden</span>
+                                    (05.10.2022)
+                                
+                            </p>
+                        </li>
+                    
+                        <li class="_item js-stats-item" data-num="7" data-freq="10" data-ago="45">
+                            <ul class="balls -vikinglotto -lg">
+                                <li class="ball">7</li>
+                            </ul>
+                            <p class="_times">Trukket <span>10 ganger</span></p>
+                            <p class="_ago">
+                                Sist trukket: 
+                                
+                                    <span>45 dager siden</span>
+                                    <span>6 trekninger siden</span>
+                                    (12.10.2022)
+                                
+                            </p>
+                        </li>
+                    
+                        <li class="_item js-stats-item is-min" data-num="8" data-freq="3" data-ago="304">
+                            <ul class="balls -vikinglotto -lg">
+                                <li class="ball">8</li>
+                            </ul>
+                            <p class="_times">Trukket <span>3 ganger</span></p>
+                            <p class="_ago">
+                                Sist trukket: 
+                                
+                                    <span>304 dager siden</span>
+                                    <span>43 trekninger siden</span>
+                                    (26.01.2022)
+                                
+                            </p>
+                        </li>
+                    
+                        <li class="_item js-stats-item" data-num="9" data-freq="11" data-ago="10">
+                            <ul class="balls -vikinglotto -lg">
+                                <li class="ball">9</li>
+                            </ul>
+                            <p class="_times">Trukket <span>11 ganger</span></p>
+                            <p class="_ago">
+                                Sist trukket: 
+                                
+                                    <span>10 dager siden</span>
+                                    <span>1 trekninger siden</span>
+                                    (16.11.2022)
+                                
+                            </p>
+                        </li>
+                    
+                        <li class="_item js-stats-item" data-num="10" data-freq="6" data-ago="17">
+                            <ul class="balls -vikinglotto -lg">
+                                <li class="ball">10</li>
+                            </ul>
+                            <p class="_times">Trukket <span>6 ganger</span></p>
+                            <p class="_ago">
+                                Sist trukket: 
+                                
+                                    <span>17 dager siden</span>
+                                    <span>2 trekninger siden</span>
+                                    (09.11.2022)
+                                
+                            </p>
+                        </li>
+                    
+                        <li class="_item js-stats-item" data-num="11" data-freq="8" data-ago="52">
+                            <ul class="balls -vikinglotto -lg">
+                                <li class="ball">11</li>
+                            </ul>
+                            <p class="_times">Trukket <span>8 ganger</span></p>
+                            <p class="_ago">
+                                Sist trukket: 
+                                
+                                    <span>52 dager siden</span>
+                                    <span>7 trekninger siden</span>
+                                    (05.10.2022)
+                                
+                            </p>
+                        </li>
+                    
+                        <li class="_item js-stats-item" data-num="12" data-freq="7" data-ago="3">
+                            <ul class="balls -vikinglotto -lg">
+                                <li class="ball">12</li>
+                            </ul>
+                            <p class="_times">Trukket <span>7 ganger</span></p>
+                            <p class="_ago">
+                                Sist trukket: 
+                                
+                                    <span>3 dager siden</span>
+                                    <span>0 trekninger siden</span>
+                                    (23.11.2022)
+                                
+                            </p>
+                        </li>
+                    
+                        <li class="_item js-stats-item" data-num="13" data-freq="13" data-ago="31">
+                            <ul class="balls -vikinglotto -lg">
+                                <li class="ball">13</li>
+                            </ul>
+                            <p class="_times">Trukket <span>13 ganger</span></p>
+                            <p class="_ago">
+                                Sist trukket: 
+                                
+                                    <span>31 dager siden</span>
+                                    <span>4 trekninger siden</span>
+                                    (26.10.2022)
+                                
+                            </p>
+                        </li>
+                    
+                        <li class="_item js-stats-item" data-num="14" data-freq="8" data-ago="87">
+                            <ul class="balls -vikinglotto -lg">
+                                <li class="ball">14</li>
+                            </ul>
+                            <p class="_times">Trukket <span>8 ganger</span></p>
+                            <p class="_ago">
+                                Sist trukket: 
+                                
+                                    <span>87 dager siden</span>
+                                    <span>12 trekninger siden</span>
+                                    (31.08.2022)
+                                
+                            </p>
+                        </li>
+                    
+                        <li class="_item js-stats-item is-max" data-num="15" data-freq="16" data-ago="17">
+                            <ul class="balls -vikinglotto -lg">
+                                <li class="ball">15</li>
+                            </ul>
+                            <p class="_times">Trukket <span>16 ganger</span></p>
+                            <p class="_ago">
+                                Sist trukket: 
+                                
+                                    <span>17 dager siden</span>
+                                    <span>2 trekninger siden</span>
+                                    (09.11.2022)
+                                
+                            </p>
+                        </li>
+                    
+                        <li class="_item js-stats-item" data-num="16" data-freq="9" data-ago="136">
+                            <ul class="balls -vikinglotto -lg">
+                                <li class="ball">16</li>
+                            </ul>
+                            <p class="_times">Trukket <span>9 ganger</span></p>
+                            <p class="_ago">
+                                Sist trukket: 
+                                
+                                    <span>136 dager siden</span>
+                                    <span>19 trekninger siden</span>
+                                    (13.07.2022)
+                                
+                            </p>
+                        </li>
+                    
+                        <li class="_item js-stats-item" data-num="17" data-freq="10" data-ago="17">
+                            <ul class="balls -vikinglotto -lg">
+                                <li class="ball">17</li>
+                            </ul>
+                            <p class="_times">Trukket <span>10 ganger</span></p>
+                            <p class="_ago">
+                                Sist trukket: 
+                                
+                                    <span>17 dager siden</span>
+                                    <span>2 trekninger siden</span>
+                                    (09.11.2022)
+                                
+                            </p>
+                        </li>
+                    
+                        <li class="_item js-stats-item" data-num="18" data-freq="8" data-ago="17">
+                            <ul class="balls -vikinglotto -lg">
+                                <li class="ball">18</li>
+                            </ul>
+                            <p class="_times">Trukket <span>8 ganger</span></p>
+                            <p class="_ago">
+                                Sist trukket: 
+                                
+                                    <span>17 dager siden</span>
+                                    <span>2 trekninger siden</span>
+                                    (09.11.2022)
+                                
+                            </p>
+                        </li>
+                    
+                        <li class="_item js-stats-item" data-num="19" data-freq="7" data-ago="45">
+                            <ul class="balls -vikinglotto -lg">
+                                <li class="ball">19</li>
+                            </ul>
+                            <p class="_times">Trukket <span>7 ganger</span></p>
+                            <p class="_ago">
+                                Sist trukket: 
+                                
+                                    <span>45 dager siden</span>
+                                    <span>6 trekninger siden</span>
+                                    (12.10.2022)
+                                
+                            </p>
+                        </li>
+                    
+                        <li class="_item js-stats-item" data-num="20" data-freq="12" data-ago="122">
+                            <ul class="balls -vikinglotto -lg">
+                                <li class="ball">20</li>
+                            </ul>
+                            <p class="_times">Trukket <span>12 ganger</span></p>
+                            <p class="_ago">
+                                Sist trukket: 
+                                
+                                    <span>122 dager siden</span>
+                                    <span>17 trekninger siden</span>
+                                    (27.07.2022)
+                                
+                            </p>
+                        </li>
+                    
+                        <li class="_item js-stats-item" data-num="21" data-freq="14" data-ago="45">
+                            <ul class="balls -vikinglotto -lg">
+                                <li class="ball">21</li>
+                            </ul>
+                            <p class="_times">Trukket <span>14 ganger</span></p>
+                            <p class="_ago">
+                                Sist trukket: 
+                                
+                                    <span>45 dager siden</span>
+                                    <span>6 trekninger siden</span>
+                                    (12.10.2022)
+                                
+                            </p>
+                        </li>
+                    
+                        <li class="_item js-stats-item" data-num="22" data-freq="11" data-ago="17">
+                            <ul class="balls -vikinglotto -lg">
+                                <li class="ball">22</li>
+                            </ul>
+                            <p class="_times">Trukket <span>11 ganger</span></p>
+                            <p class="_ago">
+                                Sist trukket: 
+                                
+                                    <span>17 dager siden</span>
+                                    <span>2 trekninger siden</span>
+                                    (09.11.2022)
+                                
+                            </p>
+                        </li>
+                    
+                        <li class="_item js-stats-item" data-num="23" data-freq="11" data-ago="17">
+                            <ul class="balls -vikinglotto -lg">
+                                <li class="ball">23</li>
+                            </ul>
+                            <p class="_times">Trukket <span>11 ganger</span></p>
+                            <p class="_ago">
+                                Sist trukket: 
+                                
+                                    <span>17 dager siden</span>
+                                    <span>2 trekninger siden</span>
+                                    (09.11.2022)
+                                
+                            </p>
+                        </li>
+                    
+                        <li class="_item js-stats-item" data-num="24" data-freq="12" data-ago="31">
+                            <ul class="balls -vikinglotto -lg">
+                                <li class="ball">24</li>
+                            </ul>
+                            <p class="_times">Trukket <span>12 ganger</span></p>
+                            <p class="_ago">
+                                Sist trukket: 
+                                
+                                    <span>31 dager siden</span>
+                                    <span>4 trekninger siden</span>
+                                    (26.10.2022)
+                                
+                            </p>
+                        </li>
+                    
+                        <li class="_item js-stats-item" data-num="25" data-freq="6" data-ago="353">
+                            <ul class="balls -vikinglotto -lg">
+                                <li class="ball">25</li>
+                            </ul>
+                            <p class="_times">Trukket <span>6 ganger</span></p>
+                            <p class="_ago">
+                                Sist trukket: 
+                                
+                                    <span>353 dager siden</span>
+                                    <span>50 trekninger siden</span>
+                                    (08.12.2021)
+                                
+                            </p>
+                        </li>
+                    
+                        <li class="_item js-stats-item" data-num="26" data-freq="9" data-ago="73">
+                            <ul class="balls -vikinglotto -lg">
+                                <li class="ball">26</li>
+                            </ul>
+                            <p class="_times">Trukket <span>9 ganger</span></p>
+                            <p class="_ago">
+                                Sist trukket: 
+                                
+                                    <span>73 dager siden</span>
+                                    <span>10 trekninger siden</span>
+                                    (14.09.2022)
+                                
+                            </p>
+                        </li>
+                    
+                        <li class="_item js-stats-item" data-num="27" data-freq="8" data-ago="3">
+                            <ul class="balls -vikinglotto -lg">
+                                <li class="ball">27</li>
+                            </ul>
+                            <p class="_times">Trukket <span>8 ganger</span></p>
+                            <p class="_ago">
+                                Sist trukket: 
+                                
+                                    <span>3 dager siden</span>
+                                    <span>0 trekninger siden</span>
+                                    (23.11.2022)
+                                
+                            </p>
+                        </li>
+                    
+                        <li class="_item js-stats-item" data-num="28" data-freq="11" data-ago="3">
+                            <ul class="balls -vikinglotto -lg">
+                                <li class="ball">28</li>
+                            </ul>
+                            <p class="_times">Trukket <span>11 ganger</span></p>
+                            <p class="_ago">
+                                Sist trukket: 
+                                
+                                    <span>3 dager siden</span>
+                                    <span>0 trekninger siden</span>
+                                    (23.11.2022)
+                                
+                            </p>
+                        </li>
+                    
+                        <li class="_item js-stats-item" data-num="29" data-freq="10" data-ago="164">
+                            <ul class="balls -vikinglotto -lg">
+                                <li class="ball">29</li>
+                            </ul>
+                            <p class="_times">Trukket <span>10 ganger</span></p>
+                            <p class="_ago">
+                                Sist trukket: 
+                                
+                                    <span>164 dager siden</span>
+                                    <span>23 trekninger siden</span>
+                                    (15.06.2022)
+                                
+                            </p>
+                        </li>
+                    
+                        <li class="_item js-stats-item" data-num="30" data-freq="10" data-ago="10">
+                            <ul class="balls -vikinglotto -lg">
+                                <li class="ball">30</li>
+                            </ul>
+                            <p class="_times">Trukket <span>10 ganger</span></p>
+                            <p class="_ago">
+                                Sist trukket: 
+                                
+                                    <span>10 dager siden</span>
+                                    <span>1 trekninger siden</span>
+                                    (16.11.2022)
+                                
+                            </p>
+                        </li>
+                    
+                        <li class="_item js-stats-item" data-num="31" data-freq="14" data-ago="52">
+                            <ul class="balls -vikinglotto -lg">
+                                <li class="ball">31</li>
+                            </ul>
+                            <p class="_times">Trukket <span>14 ganger</span></p>
+                            <p class="_ago">
+                                Sist trukket: 
+                                
+                                    <span>52 dager siden</span>
+                                    <span>7 trekninger siden</span>
+                                    (05.10.2022)
+                                
+                            </p>
+                        </li>
+                    
+                        <li class="_item js-stats-item" data-num="32" data-freq="9" data-ago="3">
+                            <ul class="balls -vikinglotto -lg">
+                                <li class="ball">32</li>
+                            </ul>
+                            <p class="_times">Trukket <span>9 ganger</span></p>
+                            <p class="_ago">
+                                Sist trukket: 
+                                
+                                    <span>3 dager siden</span>
+                                    <span>0 trekninger siden</span>
+                                    (23.11.2022)
+                                
+                            </p>
+                        </li>
+                    
+                        <li class="_item js-stats-item" data-num="33" data-freq="7" data-ago="59">
+                            <ul class="balls -vikinglotto -lg">
+                                <li class="ball">33</li>
+                            </ul>
+                            <p class="_times">Trukket <span>7 ganger</span></p>
+                            <p class="_ago">
+                                Sist trukket: 
+                                
+                                    <span>59 dager siden</span>
+                                    <span>8 trekninger siden</span>
+                                    (28.09.2022)
+                                
+                            </p>
+                        </li>
+                    
+                        <li class="_item js-stats-item" data-num="34" data-freq="12" data-ago="101">
+                            <ul class="balls -vikinglotto -lg">
+                                <li class="ball">34</li>
+                            </ul>
+                            <p class="_times">Trukket <span>12 ganger</span></p>
+                            <p class="_ago">
+                                Sist trukket: 
+                                
+                                    <span>101 dager siden</span>
+                                    <span>14 trekninger siden</span>
+                                    (17.08.2022)
+                                
+                            </p>
+                        </li>
+                    
+                        <li class="_item js-stats-item" data-num="35" data-freq="15" data-ago="38">
+                            <ul class="balls -vikinglotto -lg">
+                                <li class="ball">35</li>
+                            </ul>
+                            <p class="_times">Trukket <span>15 ganger</span></p>
+                            <p class="_ago">
+                                Sist trukket: 
+                                
+                                    <span>38 dager siden</span>
+                                    <span>5 trekninger siden</span>
+                                    (19.10.2022)
+                                
+                            </p>
+                        </li>
+                    
+                        <li class="_item js-stats-item" data-num="36" data-freq="12" data-ago="80">
+                            <ul class="balls -vikinglotto -lg">
+                                <li class="ball">36</li>
+                            </ul>
+                            <p class="_times">Trukket <span>12 ganger</span></p>
+                            <p class="_ago">
+                                Sist trukket: 
+                                
+                                    <span>80 dager siden</span>
+                                    <span>11 trekninger siden</span>
+                                    (07.09.2022)
+                                
+                            </p>
+                        </li>
+                    
+                        <li class="_item js-stats-item" data-num="37" data-freq="9" data-ago="3">
+                            <ul class="balls -vikinglotto -lg">
+                                <li class="ball">37</li>
+                            </ul>
+                            <p class="_times">Trukket <span>9 ganger</span></p>
+                            <p class="_ago">
+                                Sist trukket: 
+                                
+                                    <span>3 dager siden</span>
+                                    <span>0 trekninger siden</span>
+                                    (23.11.2022)
+                                
+                            </p>
+                        </li>
+                    
+                        <li class="_item js-stats-item" data-num="38" data-freq="9" data-ago="31">
+                            <ul class="balls -vikinglotto -lg">
+                                <li class="ball">38</li>
+                            </ul>
+                            <p class="_times">Trukket <span>9 ganger</span></p>
+                            <p class="_ago">
+                                Sist trukket: 
+                                
+                                    <span>31 dager siden</span>
+                                    <span>4 trekninger siden</span>
+                                    (26.10.2022)
+                                
+                            </p>
+                        </li>
+                    
+                        <li class="_item js-stats-item" data-num="39" data-freq="13" data-ago="87">
+                            <ul class="balls -vikinglotto -lg">
+                                <li class="ball">39</li>
+                            </ul>
+                            <p class="_times">Trukket <span>13 ganger</span></p>
+                            <p class="_ago">
+                                Sist trukket: 
+                                
+                                    <span>87 dager siden</span>
+                                    <span>12 trekninger siden</span>
+                                    (31.08.2022)
+                                
+                            </p>
+                        </li>
+                    
+                        <li class="_item js-stats-item" data-num="40" data-freq="8" data-ago="45">
+                            <ul class="balls -vikinglotto -lg">
+                                <li class="ball">40</li>
+                            </ul>
+                            <p class="_times">Trukket <span>8 ganger</span></p>
+                            <p class="_ago">
+                                Sist trukket: 
+                                
+                                    <span>45 dager siden</span>
+                                    <span>6 trekninger siden</span>
+                                    (12.10.2022)
+                                
+                            </p>
+                        </li>
+                    
+                        <li class="_item js-stats-item" data-num="41" data-freq="7" data-ago="10">
+                            <ul class="balls -vikinglotto -lg">
+                                <li class="ball">41</li>
+                            </ul>
+                            <p class="_times">Trukket <span>7 ganger</span></p>
+                            <p class="_ago">
+                                Sist trukket: 
+                                
+                                    <span>10 dager siden</span>
+                                    <span>1 trekninger siden</span>
+                                    (16.11.2022)
+                                
+                            </p>
+                        </li>
+                    
+                        <li class="_item js-stats-item" data-num="42" data-freq="10" data-ago="59">
+                            <ul class="balls -vikinglotto -lg">
+                                <li class="ball">42</li>
+                            </ul>
+                            <p class="_times">Trukket <span>10 ganger</span></p>
+                            <p class="_ago">
+                                Sist trukket: 
+                                
+                                    <span>59 dager siden</span>
+                                    <span>8 trekninger siden</span>
+                                    (28.09.2022)
+                                
+                            </p>
+                        </li>
+                    
+                        <li class="_item js-stats-item" data-num="43" data-freq="11" data-ago="87">
+                            <ul class="balls -vikinglotto -lg">
+                                <li class="ball">43</li>
+                            </ul>
+                            <p class="_times">Trukket <span>11 ganger</span></p>
+                            <p class="_ago">
+                                Sist trukket: 
+                                
+                                    <span>87 dager siden</span>
+                                    <span>12 trekninger siden</span>
+                                    (31.08.2022)
+                                
+                            </p>
+                        </li>
+                    
+                        <li class="_item js-stats-item" data-num="44" data-freq="12" data-ago="10">
+                            <ul class="balls -vikinglotto -lg">
+                                <li class="ball">44</li>
+                            </ul>
+                            <p class="_times">Trukket <span>12 ganger</span></p>
+                            <p class="_ago">
+                                Sist trukket: 
+                                
+                                    <span>10 dager siden</span>
+                                    <span>1 trekninger siden</span>
+                                    (16.11.2022)
+                                
+                            </p>
+                        </li>
+                    
+                        <li class="_item js-stats-item" data-num="45" data-freq="8" data-ago="24">
+                            <ul class="balls -vikinglotto -lg">
+                                <li class="ball">45</li>
+                            </ul>
+                            <p class="_times">Trukket <span>8 ganger</span></p>
+                            <p class="_ago">
+                                Sist trukket: 
+                                
+                                    <span>24 dager siden</span>
+                                    <span>3 trekninger siden</span>
+                                    (02.11.2022)
+                                
+                            </p>
+                        </li>
+                    
+                        <li class="_item js-stats-item" data-num="46" data-freq="10" data-ago="10">
+                            <ul class="balls -vikinglotto -lg">
+                                <li class="ball">46</li>
+                            </ul>
+                            <p class="_times">Trukket <span>10 ganger</span></p>
+                            <p class="_ago">
+                                Sist trukket: 
+                                
+                                    <span>10 dager siden</span>
+                                    <span>1 trekninger siden</span>
+                                    (16.11.2022)
+                                
+                            </p>
+                        </li>
+                    
+                        <li class="_item js-stats-item" data-num="47" data-freq="7" data-ago="129">
+                            <ul class="balls -vikinglotto -lg">
+                                <li class="ball">47</li>
+                            </ul>
+                            <p class="_times">Trukket <span>7 ganger</span></p>
+                            <p class="_ago">
+                                Sist trukket: 
+                                
+                                    <span>129 dager siden</span>
+                                    <span>18 trekninger siden</span>
+                                    (20.07.2022)
+                                
+                            </p>
+                        </li>
+                    
+                        <li class="_item js-stats-item" data-num="48" data-freq="12" data-ago="66">
+                            <ul class="balls -vikinglotto -lg">
+                                <li class="ball">48</li>
+                            </ul>
+                            <p class="_times">Trukket <span>12 ganger</span></p>
+                            <p class="_ago">
+                                Sist trukket: 
+                                
+                                    <span>66 dager siden</span>
+                                    <span>9 trekninger siden</span>
+                                    (21.09.2022)
+                                
+                            </p>
+                        </li>
+                    
+                </ul>
+            </div>
+        </div>
+                
+</main>
+        </div>
+    </div>
+<!--
+    <ul class="ul-reset stats js-stats">
+								
+        <li class="_item js-stats-item" data-num="1" data-freq="6" data-ago="24">
+            <ul class="balls -vikinglotto -lg">
+                <li class="ball">1</li>
+            </ul>
+            <p class="_times">Trukket <span>6 ganger</span></p>
+            <p class="_ago">
+                Sist trukket: 
+                
+                    <span>24 dager siden</span>
+                    <span>3 trekninger siden</span>
+                    (02.11.2022)
+            </p>
+        </li>
+        <li class="_item js-stats-item" data-num="2" data-freq="11" data-ago="59">
+            <ul class="balls -vikinglotto -lg">
+                <li class="ball">2</li>
+            </ul>
+            <p class="_times">Trukket <span>11 ganger</span></p>
+            <p class="_ago">
+                Sist trukket: 
+                
+                    <span>59 dager siden</span>
+                    <span>8 trekninger siden</span>
+                    (28.09.2022)
+                
+            </p>
+        </li>
+    </ul>
+-->    
+    
+    
+    <div id="winning-rows"></div>
+    
+    <div class="grid-container">
+        
+        <div>
+            <p>Main Numbers</p>
+            <div id="look-up-nummber-freq"></div>
+        </div>
+        <div>
+            <div>
+                <p></p>
+                <div class="grid-container">
+                    <div>   
+                        <div id="look-up-sequens-freq-befor"></div>
+                    </div>
+                    <div>
+                        <div id="look-up-freq-befor"></div>
+                    </div>
+                </div>
+                
+            </div>
+            <div>
+                <p></p>
+                <div class="grid-container">
+                    <div>
+                        <div id="look-up-sequens-freq-after"></div>
+                    </div>
+                    <div>
+                        <div id="look-up-freq-after"></div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+
+        </div>
+    </div>
+        
+
+    
+
+<!--
+    <p style="color: blue;" title="it's me">Hello Viking Fan!!</p>
+    
+    <p></p>
+    <p></p>
+    <div class="container">
+        <p>The w3-container class is an important w3.CSS class.</p>
+      </div>
+-->
+    <!--  <button id="btn">id Button from functionScript</button> -->
+    <p></p>
+    <p></p>
+    <!-- <button onclick="lookUpStats(1,35)">inFunc 35</button> -->
+    <!--  <button onclick="lookUpStats(1,1)">inFunc 1</button> -->
+    <p></p>
+    <p></p>
+    <div class="grid-container">
+        <div>
+            <button id="1" class="button button1">1</button>
+            <button id="2" class="button button1">2</button>
+            <button id="3" class="button button1">3</button>
+            <button id="4" class="button button1">4</button>
+            <button id="5" class="button button1">5</button>
+            <button id="6" class="button button1">6</button>
+            <button id="7" class="button button1">7</button>
+            <button id="8" class="button button1">8</button>
+            <button id="9" class="button button1">9</button>
+            <button id="10" class="button button1">10</button>
+            <button id="11" class="button button1">11</button>
+            <button id="12" class="button button1">12</button>
+            <button id="13" class="button button1">13</button>
+            <button id="14" class="button button1">14</button>
+            <button id="15" class="button button1">15</button>
+            <button id="16" class="button button1">16</button>
+            <button id="17" class="button button1">17</button>
+            <button id="18" class="button button1">18</button>
+            <button id="19" class="button button1">19</button>
+            <button id="20" class="button button1">20</button>
+            <button id="21" class="button button1">21</button>
+            <button id="22" class="button button1">22</button>
+            <button id="23" class="button button1">23</button>
+            <button id="24" class="button button1">24</button>
+            <button id="25" class="button button1">25</button>
+            <button id="26" class="button button1">26</button>
+            <button id="27" class="button button1">27</button>
+            <button id="28" class="button button1">28</button>
+            <button id="29" class="button button1">29</button>
+            <button id="30" class="button button1">30</button>
+            <button id="31" class="button button1">31</button>
+            <button id="32" class="button button1">32</button>
+            <button id="33" class="button button1">33</button>
+            <button id="34" class="button button1">34</button>
+            <button id="35" class="button button1">35</button>
+            <button id="36" class="button button1">36</button>
+            <button id="37" class="button button1">37</button>
+            <button id="38" class="button button1">38</button>
+            <button id="39" class="button button1">39</button>
+            <button id="40" class="button button1">40</button>
+            <button id="41" class="button button1">41</button>
+            <button id="42" class="button button1">42</button>
+            <button id="43" class="button button1">43</button>
+            <button id="44" class="button button1">44</button>
+            <button id="45" class="button button1">45</button>
+            <button id="46" class="button button1">46</button>
+            <button id="47" class="button button1">47</button>
+            <button id="48" class="button button1">48</button>
+        </div>
+    <div>
+        <button id="ex_1" class="button button2">1</button>
+        <button id="ex_2" class="button button2">2</button>
+        <button id="ex_3" class="button button2">3</button>
+        <button id="ex_4" class="button button2">4</button>
+        <button id="ex_5" class="button button2">5</button>
+    </div>
+      </div>
+
+        
+    
+    
+    
+      
+    
+    
+    
+    
+
+    
+    
+    <script src="jquery-3.6.0.js"></script>
+
+    <!-- Main Script 
+        "MenuArg(1,value) Look up a number info -arg {number} \n" +
+            "MenuArg(2) prints list with -arg{ 1 hole list} \n" +
+            "MenuArg(3) prints list with -arg{ 2 freq > 0}  \n" +
+            "MenuArg(4,value) prints list with -arg{ 3 freq > value} eks 4,value where freq > value \n" +
+            "MenuArg(5) prints the winning row list \n" +
+            "MenuArg(6,value) prints Set's of frequency -arg{ 6 , ValueNumber } freq numbers drawn befor and after \n" +
+            "7 prints Set's All (1 - 48) all set's of frequency \n\n");
+    -->
+    <script src="vikingLottoScript.js"></script>
+    
+    <script src="functionScript.js"></script>
+    
+    <!-- Animation test
+    <script src="anime.min.js"></script>
+    -->
     
 </body>
 </html>
