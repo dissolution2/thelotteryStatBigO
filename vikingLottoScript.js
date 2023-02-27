@@ -543,11 +543,12 @@ inFunc_setVikingLottoWinningRowToFreq(22,47,40,25,43,39,2,"January 11,2023");
 inFunc_setVikingLottoWinningRowToFreq(3,20,41,37,43,26,5,"January 18,2023");
 inFunc_setVikingLottoWinningRowToFreq(18,39,34,19,45,25,2,"January 25,2023");
 inFunc_setVikingLottoWinningRowToFreq(33,26,5,2,20,16,3,"February 1,2023");
+inFunc_setVikingLottoWinningRowToFreq(3,23,4,26,21,34,1,"February 8,2023");
+inFunc_setVikingLottoWinningRowToFreq(48,9,43,41,21,10,4,"February 15,2023");
+inFunc_setVikingLottoWinningRowToFreq(48,9,43,41,21,10,4,"February 22,2023");
 
 
-//hore hore hore hore
-
-
+// add to remote rep!!
 
 
 function lookUpStats(menuArg, numberValue){
