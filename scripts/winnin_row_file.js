@@ -1,5 +1,6 @@
 
 
+/** Add the winning rows */
 // January, February, March, April, May, June, July, August, September, October, November, December
 inFunc_setVikingLottoWinningRowToFreq(6,9,19,24,27,35,3,"February 7,2021"); 
 inFunc_setVikingLottoWinningRowToFreq(7,34,21,18,35,11,4,"February 20,2021"); 
@@ -26,3 +27,9 @@ inFunc_setVikingLottoWinningRowToFreq(3,23,4,26,21,34,1,"February 8,2023");
 inFunc_setVikingLottoWinningRowToFreq(48,9,43,41,21,10,4,"February 15,2023");
 inFunc_setVikingLottoWinningRowToFreq(15,25,30,4,39,33,4,"February 22,2023");
 inFunc_setVikingLottoWinningRowToFreq(32,31,35,40,41,22,1,"March 1 ,2023");
+inFunc_setVikingLottoWinningRowToFreq(16,11,3,23,8,22,4,"March 8 ,2023");
+
+
+
+
+

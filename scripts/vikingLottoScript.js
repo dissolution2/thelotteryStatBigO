@@ -19,6 +19,19 @@ let winningVikingRow = []; // store all the winning numbers
 let numberFrequensVikingTall  = []; 
 let numberSetsFrequensVikingTall = new Map();
 
+// an remember ??
+jQuery(document).ready(function($){
+
+    // All your code using $
+    
+    });
+
+function subtract(a, b){
+    return a - b;
+}
+
+//module.exports.subtract = subtract;
+
 /** value number 24 
  * WinningRow index 0
  *  befor 33 after 2
@@ -239,36 +252,15 @@ function printLookUpFreqOfMainNumbersAll(){
 }
 
 /** testing Class */
-//test_numberSetsFrequensVikingTall(24,2,33);
-//test_numberSetsFrequensVikingTall(24,4,33);
-//test_numberSetsFrequensVikingTall(24,4,33); // dublicate 4 freq = 2
-//test_numberSetsFrequensVikingTall(25,1,33);
-//test_numberSetsFrequensVikingTall(25,6,33);
-//test_numberSetsFrequensVikingTall(25,2,33);
-//test_numberSetsFrequensVikingTall(25,6,33); // dublicate 6 freq = 2
-//printAllSets();
-
-
 
 for(let y=0; y < 48;y++){
     vikingMainLotto.set(y+1,0); // sett the number to the list, and add 0 value for date.
 }
 
-//console.log(vikingLotto);
-
 
 for(let i=0; i < 49; i++){ //vikingLotto.length
     numberFrequensVikingMainLotto.push(new Map().set(i,0));
 }
-
-
-// test
-//for(let i=0; i < 6;i++){ // vikingLotto extra numbers 
-
-//}
-
-
-
 
 //
 function inFunc_findFunctionFreq(positionOfVikingLotto){
@@ -282,9 +274,6 @@ function inFunc_lookUpNummberFreq(positionOfVikingLotto){
     if(_map.has(positionOfVikingLotto)){
         console.log("Nummber: " + positionOfVikingLotto + " has frequency: " + _map.get(positionOfVikingLotto));
         
-        
-
-
         let element;
         $("document").ready(function() {
                 element = document.getElementById('n_number');
@@ -324,7 +313,7 @@ function inFunc_lookUpNummberFreq(positionOfVikingLotto){
 
 function inFunc_lookUpNummberViking(position){
     if(vikingMainLotto.has(position)){
-        console.log("Nummber: " + position + " Last added date: " + vikingMainLotto.get(position));
+        console.log("Nummber: " + position + " Last added date: " + vikingMainLotto.get(position)); // index == lotto number , value is the date last added.
 
 
         console.log("Days since last drawn: " + getDateDaysSince(vikingMainLotto.get(position)) );
@@ -398,8 +387,20 @@ function inFunc_setFunctionVikingLottoDrawnDate(position, x){ // date
     }
 }
 
+// Chanded 8 March 2023 added x to the winningRow !!
+/**
+ * 
+ * @param {*} n_1 
+ * @param {*} n_2 
+ * @param {*} n_3 
+ * @param {*} n_4 
+ * @param {*} n_5 
+ * @param {*} n_6 
+ * @param {*} n_7 
+ * @param {*} x 
+ */
 function inFunc_setVikingLottoWinningRowToFreq(n_1, n_2, n_3, n_4, n_5, n_6, n_7, x){
-    let input = [n_1, n_2, n_3, n_4, n_5, n_6, n_7];
+    let input = [n_1, n_2, n_3, n_4, n_5, n_6, n_7,x];
     winningVikingRow.push(input); 
 
     inFunc_numberSetsFrequensVikingTall(n_1,0,n_2);
@@ -483,6 +484,11 @@ function inFunc_setsFrequenseOfSets(){
     //test_numberSetsFrequensVikingTall(24,2,33);
 }
 
+/**
+ * 
+ * @param {*} arg 
+ * @returns 
+ */
 function dateFunction(arg){
     var today = new Date();
     var dd = String(today.getDate()).padStart(2, '0');
@@ -520,6 +526,193 @@ function inFunc_printVikingLottoWinningRows(){
     }
 }
 
+
+// working here !!! ToDo :
+console.log("working on: inFunc_printVikingLottoNumberSameVinningRowCount.....\n\n" );
+//numberCountLookingFor
+// sett's of numbers 
+/**
+ * sett's 
+ * choice 1. sett's of 3 (x 2) -X = optional [number_one + number_two + number_thre] + [number_four + number_five + number_six]
+ * choice 2. sett's of 2 (x 3) -X optional [number_one + number_two] + [number_thre + number_four] + [number_five + number_six]
+ * 
+ */
+function inFunc_printVikingLottoNumberSameVinningRowCount(menuArg, number_one, number_two, number_thre, number_four, number_five, number_six){
+
+    switch(menuArg){
+        case 1:
+            console.log("VikingNumber: " + number_one + " is in winning row's:\n");
+            break;
+        case 2:
+            console.log("VikingNumber: " + number_one + " - " + number_two + " is in winning row's:\n");
+            break;
+        case 3:
+            console.log("VikingNumber: " + number_one + " - " + number_two + " - " + number_thre + " is in winning row's:\n");
+            break;
+    }
+    let lopped = 0;
+    let found_number_one; // = 0;
+    let found_number_two; //= 0;
+    let index_one = 0
+    let index_two = 0;
+    
+    let found_number_thre; // = 0;
+    let found_number_four; //= 0;
+
+    let found_number_five; // = 0;
+    let found_number_six; //= 0;
+
+
+
+    for(let u=0; u < winningVikingRow.length;u++){
+            //let rowString = winningVikingRow[u];
+            //rowString = rowString.toString().replace(/\,/gi, " - ");
+            //console.log("Winning Row: " + rowString);
+            let first = winningVikingRow[u];
+
+
+            switch(menuArg){
+            
+            case 1:
+                for(let i= 0; i < first.length - 1;i++ ){ // last is Extra Number drawn
+                    
+                    if(number_one == first[i] ){
+                        let row = winningVikingRow[u];
+                        
+                        switch(i){
+                            case 0:
+                                console.log('%c' + row[0]  + "%c - " + row[1] + " - " + row[2] +
+                                " - " + row[3] + " - " + row[4] +
+                                " - " + row[5] + " - [Extra: " + row[6] +"]" + " - " + row[7], 'background-color: yellow', 'color: black');
+                                break;
+                            case 1:    
+                                console.log('%c' + row[0]  + " - %c" + row[1] + "%c - " + row[2] +
+                                " - " + row[3] + " - " + row[4] +
+                                " - " + row[5] + " - [Extra: " + row[6] +"]" + " - " + row[7], 'color: black', 'background-color: yellow', 'color: black');
+                                break;
+                            case 2:    
+                                console.log('%c' + row[0]  + " - " + row[1] + " - %c" + row[2] +
+                                "%c - " + row[3] + " - " + row[4] +
+                                " - " + row[5] + " - [Extra: " + row[6] +"]" + " - " + row[7], 'color: black', 'background-color: yellow', 'color: black');
+                                break;
+                            case 3:    
+                                console.log('%c' + row[0]  + " - " + row[1] + " - " + row[2] +
+                                " - %c" + row[3] + "%c - " + row[4] +
+                                " - " + row[5] + " - [Extra: " + row[6] +"]" + " - " + row[7], 'color: black', 'background-color: yellow', 'color: black');
+                                break;
+                            case 4:    
+                                console.log('%c' + row[0]  + " - " + row[1] + " - " + row[2] +
+                                " - " + row[3] + " - %c" + row[4] +
+                                "%c - " + row[5] + " - [Extra: " + row[6] +"]" + " - " + row[7], 'color: black', 'background-color: yellow', 'color: black');
+                                break;
+                            case 5:    
+                                console.log('%c' + row[0]  + " - " + row[1] + " - " + row[2] +
+                                " - " + row[3] + " - " + row[4] +
+                                " - %c" + row[5] + "%c - [Extra: " + row[6] +"]" + " - " + row[7], 'color: black', 'background-color: yellow', 'color: black');
+                                break;
+                        }
+                    }
+                }
+                break;
+            case 2:
+                /*** Number_two */
+                
+                lopped = 0;
+                found_number_one = 0;
+                found_number_two = 0;
+
+                for(let i= 0; i < first.length - 1;i++ ){ // last is Extra Number drawn
+                    
+                    lopped++;
+
+                    if(number_one == first[i] ){
+                        //console.log("found " + number_one + " on: " + u);
+                        found_number_one = 1;
+                        //index_one = i;
+                    }
+                    if(number_two == first[i] ){
+                        //console.log("found " + number_two + " on: "  + u);
+                        found_number_two = 1;
+                        //index_two = i;
+                    }
+                
+                      
+                }
+                //console.log("looped : " + lopped);
+                if(found_number_one == 1 && found_number_two == 1 && lopped == 7){
+                    //console.log("Found number_one and number_two " + u);
+
+                    //console.log(winningVikingRow[u]);
+                    found_number_one = 0;
+                    found_number_two = 0;
+                    
+                    let row = winningVikingRow[u];
+                
+                    console.log(row[0]  + " - " + row[1] + " - " + row[2] +
+                    " - " + row[3] + " - " + row[4] +
+                    " - " + row[5] + " - [Extra: " + row[6] +"]" + " - " + row[7] );
+                }
+
+                
+            break;
+            case 3:
+                lopped = 0;
+                found_number_one = 0;
+                found_number_two = 0;
+                found_number_thre = 0;
+                for(let i= 0; i < first.length - 1;i++ ){ // last is Extra Number drawn
+                    lopped++;
+                    if(number_one == first[i] ){
+                        //console.log("found " + number_two + " on: "  + u);
+                        found_number_one = 1;
+                        index_one = i;
+                    }
+                    if(number_two == first[i] ){
+                        //console.log("found " + number_two + " on: "  + u);
+                        found_number_two = 1;
+                        index_two = i;
+                    }
+                    if(number_thre == first[i] ){
+                        //console.log("found " + number_two + " on: "  + u);
+                        found_number_thre = 1;
+                        //index_two = i;
+                    }
+                }
+                if(found_number_one == 1 && found_number_two == 1 && found_number_thre == 1 && lopped == 7 ){
+                    //console.log("Found number_one and number_two " + u);
+
+                    //console.log(winningVikingRow[u]);
+                    found_number_one = 0;
+                    found_number_two = 0;
+                    found_number_thre = 0;
+                    
+                    let row = winningVikingRow[u];
+                    
+                    let string1 = '%c';
+                    let string2 = '%c';
+                    let string3 = '%c';
+
+
+
+                    console.log(first[0]  + " - " + first[1] + " - " + first[2] +
+                    " - " + first[3] + " - " + first[4] +
+                    " - " + first[5] + " - [Extra: " + first[6] +"]" + " - " + first[7] );
+                    
+                    
+                    //console.log(row[0]  + " - " + row[1] + " - " + row[2] +
+                    //" - " + row[3] + " - " + row[4] +
+                    //" - " + row[5] + " - [Extra: " + row[6] +"]" + " - " + row[7] );
+                }
+                break;
+        }
+            
+    }
+
+
+}
+
+
+
 /** Add the winning rows */
 // January, February, March, April, May, June, July, August, September, October, November, December
 inFunc_setVikingLottoWinningRowToFreq(6,9,19,24,27,35,3,"February 7,2021"); 
@@ -547,7 +740,7 @@ inFunc_setVikingLottoWinningRowToFreq(3,23,4,26,21,34,1,"February 8,2023");
 inFunc_setVikingLottoWinningRowToFreq(48,9,43,41,21,10,4,"February 15,2023");
 inFunc_setVikingLottoWinningRowToFreq(15,25,30,4,39,33,4,"February 22,2023");
 inFunc_setVikingLottoWinningRowToFreq(32,31,35,40,41,22,1,"March 1 ,2023");
-
+inFunc_setVikingLottoWinningRowToFreq(16,11,3,23,8,22,4,"March 8 ,2023");
 
 
 
@@ -614,10 +807,31 @@ function menu(){
 }
 
 menu();
+
+//testing
+inFunc_printVikingLottoNumberSameVinningRowCount(1,25);
+console.log("\n");
+inFunc_printVikingLottoNumberSameVinningRowCount(2,22,23);
+console.log("\n");
+inFunc_printVikingLottoNumberSameVinningRowCount(2,35,11);
+console.log("\n");
+inFunc_printVikingLottoNumberSameVinningRowCount(3,31,32,35);
+
+
+/*
 lookUpStats(0);
 lookUpStats(1,22);
 lookUpStats(4,3);
 lookUpStats(6,22);
+
+lookUpStats(1,3);
+lookUpStats(1,8);
+lookUpStats(1,11);
+lookUpStats(1,16);
+lookUpStats(1,22);
+lookUpStats(1,23);
+*/
+//lookUpStats(1,4);
 
 /*
 lookUpStats(1,4);
