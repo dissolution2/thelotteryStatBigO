@@ -1,0 +1,6 @@
+{
+    "scripts": {
+        "test1": "node test.js",
+        "test2": "mocha test.js"
+    }
+}

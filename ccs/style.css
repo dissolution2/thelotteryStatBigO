@@ -1,0 +1,293 @@
+element.style {
+    height: auto !important;
+}
+main, section {
+    display: block;
+}
+main {
+    position: relative;
+    -ms-flex: 1;
+    flex: 1;
+    z-index: 0;
+}
+@media (min-width: 1024px){
+    .content {
+        margin: 20px 0 0;
+    }
+    .content {
+        background: #fff;
+        padding: 20px 40px 60px;
+        padding-top: 60px;
+        padding-right: 350px;
+        padding-bottom: 60px;
+        padding-left: 350px;
+        box-shadow: 0 0 40px rgb(26 26 26 / 25%);
+        border-radius: 15px;
+    }
+}
+.polar {
+    background: #fff;
+    padding: 20px 40px 60px;
+    padding-top: 60px;
+    padding-right: 350px;
+    padding-bottom: 60px;
+    padding-left: 350px;
+    box-shadow: 0 0 40px rgb(26 26 26 / 25%);
+    border-radius: 15px;
+}
+
+
+.table {
+    width: 100%;
+    margin-bottom: 40px;
+}
+.table, .table-wrap, table {
+    box-shadow: 0 0 40px rgb(26 26 26 / 25%);
+    border-radius: 15px;
+    overflow: hidden;
+}
+@media (min-width: 1024px){
+    .balls.-lg li {
+        width: 50px;
+        height: 50px;
+        line-height: 3.1rem;
+        font-size: 1.35em;
+    }
+}
+@media (min-width: 768px){
+    .balls.-lg li {
+        width: 37px;
+        height: 37px;
+        line-height: 2.4rem;
+        font-size: 1.1em;
+    }
+}
+.balls li {
+    position: relative;
+    background: #000078;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    text-align: center;
+    margin: 2px;
+    line-height: 2rem;
+    color: #fff;
+}
+.ball {
+  height: 30px;
+  width: 30px;
+  display: table-cell;
+  text-align: center;
+  color: white;
+  vertical-align: middle;
+  border-radius: 50%; /* may require vendor prefixes */
+  background: blue;
+  cursor: pointer;
+}
+.balls {
+    margin: 20px 0;
+}
+.balls {
+    margin: 3px 5px;
+    font-family: Rubik,sans-serif;
+}
+.balls, .stats, .ul-reset {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.balls, .biggest-details, .calculator_grid, .checking-bnts, .col-list, .fx.-cn, .js-line, .menu_item, .menu_link, .submenu_list, .tab {
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.ul-reset {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.thead h2 {
+    margin: 0;
+    font-size: 1.2em;
+    text-transform: uppercase;
+}
+h2 {
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+.thead {
+    background: #000078;
+    color: #fff;
+    padding: 10px 15px;
+}
+#app, #map-cursor, .balls, .biggest-col, .biggest-details, #breadcrumb, .calculator_grid, .checking-bnts, .col-list, .fx, .js-line, .langs, .menu, .menu_item, .menu_link, .news-summary, .row, .stats, .stats ._row, .submenu_list, .tab, .title-flag, .title-icon, .ul-icon-links li a {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+ol, ul {
+    -webkit-padding-start: 30px;
+}
+*, :after, :before {
+    box-sizing: border-box;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+user agent stylesheet
+ul ul {
+    list-style-type: circle;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+}
+
+
+user agent stylesheet
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+user agent stylesheet
+li {
+    text-align: -webkit-match-parent;
+}
+ul {
+    list-style-type: disc;
+}
+body {
+    scroll-behavior: smooth;
+    background: #f7f7f7;
+    font-family: Rubik,sans-serif;
+    font-size: 16px;
+    color: #1a1a1a;
+    -webkit-text-size-adjust: none;
+}
+*, :after, :before {
+    box-sizing: border-box;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+*, :after, :before {
+    box-sizing: border-box;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.stats ._item {
+    padding: 20px;
+    border-right: 1px solid rgba(26,26,26,.15);
+    border-bottom: 1px solid rgba(26,26,26,.15);
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    -ms-flex-negative: 1;
+    flex-shrink: 1;
+    -ms-flex-preferred-size: 12%;
+    flex-basis: 12%;
+    position: relative;
+}
+div {
+    display: block;
+}
+body {
+    scroll-behavior: smooth;
+    background: #f7f7f7;
+    font-family: Rubik,sans-serif;
+    font-size: 16px;
+    color: #1a1a1a;
+    -webkit-text-size-adjust: none;
+}
+.checkbox ._title, .checkbox img {
+    margin-right: 5px;
+}
+.checkbox img {
+    width: 15px;
+    height: 15px;
+    opacity: .5;
+}
+img {
+    max-width: 100%;
+}
+.checkbox {
+    font-size: .75em;
+    font-family: Rubik,sans-serif;
+    text-align: center;
+    margin: 3px 5px;
+    cursor: pointer;
+}
+.hidden {
+    display: none;
+}
+input {
+    padding: 10px;
+    border-color: #fff;
+    -ms-flex: 1;
+    flex: 1;
+}
+*, :after, :before {
+    box-sizing: border-box;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+user agent stylesheet
+input[type="checkbox" i] {
+    background-color: initial;
+    cursor: default;
+    appearance: auto;
+    box-sizing: border-box;
+    margin: 3px 3px 3px 4px;
+    padding: initial;
+    border: initial;
+}
+user agent stylesheet
+input {
+    writing-mode: horizontal-tb !important;
+    /* font-style: ;
+    font-variant-ligatures: ;
+    font-variant-caps: ;
+    font-variant-numeric: ;
+    font-variant-east-asian: ;
+    font-weight: ;
+    font-stretch: ;
+    font-size: ;
+    font-family: ; */
+    text-rendering: auto;
+    color: fieldtext;
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    appearance: auto;
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+    background-color: field;
+    margin: 0em;
+    padding: 1px 2px;
+    border-width: 2px;
+    border-style: inset;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    border-image: initial;
+}
+.checkbox ._btn ._wrap {
+    width: 100%;
+    position: relative;
+}
+#search_input, .answer, .banner>img, .burger:after, .burger:before, .burger span, .casinos li, .casinos li img, .checkbox ._btn ._wrap, .game, .h-box, .h-box img, .js-collapsible, .langs, .map, .map-info, .map svg, .menu, .news-summary img, .submenu_col, aside {
+    transition: all .3s ease-in-out;
+}
+.fx.-nowrap, .langs, .menu, .stats ._row, .title-flag, .title-icon, .ul-icon-links li a {
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+}

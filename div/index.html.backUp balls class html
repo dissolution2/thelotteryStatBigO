@@ -1,0 +1,525 @@
+<html lang="en">
+<head>
+    <style>
+		@font-face {
+			font-family: rubik; font-style: normal; font-display: swap;
+			src: url(/fonts/rubik.woff2) format("woff2"), url(/fonts/rubik.woff) format("woff"), url(/fonts/rubik.ttf) format("truetype");
+		}
+
+        div.polaroid {
+            width: 250px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            text-align: center;
+    }
+
+    div.container {
+    padding: 10px;
+    }
+
+    .content {
+        background: #fff;
+        padding: 20px 40px 60px;
+        padding-top: 60px;
+        padding-right: 350px;
+        padding-bottom: 60px;
+        padding-left: 350px;
+        box-shadow: 0 0 40px rgb(26 26 26 / 25%);
+        border-radius: 15px;
+    }
+
+    .polar {
+        background: #fff;
+        padding: 20px 40px 60px;
+        padding-top: 60px;
+        padding-right: 350px;
+        padding-bottom: 60px;
+        padding-left: 350px;
+        box-shadow: 0 0 40px rgb(26 26 26 / 25%);
+        border-radius: 15px;
+    }
+
+
+.table {
+    width: 100%;
+    margin-bottom: 40px;
+}
+.table, .table-wrap, table {
+    box-shadow: 0 0 40px rgb(26 26 26 / 25%);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+    .balls li {
+        position: relative;
+        background: #000078;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        text-align: center;
+        margin: 2px;
+        line-height: 2rem;
+        color: #fff;
+        
+    }
+
+    ol, ul {
+        -webkit-padding-start: 30px;
+    }
+
+    ul ul {
+        list-style-type: circle;
+        margin-block-start: 0px;
+        margin-block-end: 0px;
+    }
+
+    ._item {
+        padding: 20px;
+        border-right: 1px solid rgba(26,26,26,.15);
+        border-bottom: 1px solid rgba(26,26,26,.15);
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+        -ms-flex-negative: 1;
+        flex-shrink: 1;
+        -ms-flex-preferred-size: 12%;
+        flex-basis: 12%;
+        position: relative;
+    }
+
+    ul {
+        display: block;
+        list-style-type: disc;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        padding-inline-start: 40px;
+    }
+
+    .ballsAfter li {
+        position: relative;
+        background: #4cec59;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        text-align: center;
+        margin: 2px;
+        line-height: 2rem;
+        color: #fff;
+    }
+
+    .ballsFrq li {
+        position: relative;
+        background: #df4983;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        text-align: center;
+        margin: 2px;
+        line-height: 2rem;
+        color: #fff;
+    }
+
+    .ball {
+        height: 30px;
+        width: 30px;
+        display: table-cell;
+        text-align: center;
+        color: white;
+        vertical-align: middle;
+        border-radius: 50%; /* may require vendor prefixes */
+        background: blue;
+        cursor: pointer;
+    }
+
+	</style>
+    <!-- <link href="styles.ccs" rel="stylesheet"> -->
+    <link href="./ccs/style.ccs" rel="stylesheet"> 
+    <title>Document</title>
+</head>
+<body>
+    <p>Html with ccs styling</p>
+    <div class="content shadow-none p-3 mb-5 bg-light rounded">No shadow</div>
+    <p></p>
+    <div class="content shadow-sm p-3 mb-5 bg-white rounded">Small shadow</div>
+    <p></p>
+    <div class="content shadow p-3 mb-5 bg-white rounded">Regular shadow</div>
+    <p></p>
+    <div class="content shadow-lg p-3 mb-5 bg-white rounded">Larger shadow</div>
+    <p></p>
+    <div class="polaroid">
+        <img src="./images/jpg/rock600x400.jpg" alt="Norway" style="width:100%">
+        <div class="container">
+        <p>Hardanger 1, Norway</p>
+        </div>
+  </div>
+  <p></p>
+  <!--
+  <div class="content shadow-lg p-3 mb-5 bg-white rounded">
+        <div class="polar">
+            <div class="polaroid">
+                <img src="./images/jpg/rock600x400.jpg" alt="Norway" style="width:100%">
+                <div class="container">
+                <p>Hardanger 2, Norway</p>
+                </div>
+            </div>
+        </div> 
+        <p></p> 
+    </div>
+      <p></p>
+-->  
+
+    
+<!--
+    <ul class="ul-reset stats js-stats">
+								
+        <li class="_item js-stats-item" data-num="1" data-freq="6" data-ago="24">
+            <ul class="balls -vikinglotto -lg">
+                <li class="ball">1</li>
+            </ul>
+            <p class="_times">Trukket <span>6 ganger</span></p>
+            <p class="_ago">
+                Sist trukket: 
+                
+                    <span>24 dager siden</span>
+                    <span>3 trekninger siden</span>
+                    (02.11.2022)
+            </p>
+        </li>
+        <li class="_item js-stats-item" data-num="2" data-freq="11" data-ago="59">
+            <ul class="balls -vikinglotto -lg">
+                <li class="ball">2</li>
+            </ul>
+            <p class="_times">Trukket <span>11 ganger</span></p>
+            <p class="_ago">
+                Sist trukket: 
+                
+                    <span>59 dager siden</span>
+                    <span>8 trekninger siden</span>
+                    (28.09.2022)
+                
+            </p>
+        </li>
+    </ul>
+-->    
+    
+    
+    <div id="winning-rows"></div>
+    
+    <div class="grid-container">
+        
+        <div>
+            <p>Main Numbers</p>
+            <div class="content shadow-lg p-3 mb-5 bg-white rounded">
+                <div class="polar">
+                    <div class="polaroid">
+                        <img src="./images/jpg/rock600x400.jpg" alt="Norway" style="width:100%">
+                        <div class="container">
+                        <p>Hardanger 2, Norway</p>
+                        <div id="look-up-nummber-freq"></div>
+                        </div>
+
+                        <p></p>
+                        <div>
+                            <p></p>
+                            <div class="grid-container">
+                                <div>   
+                                    <div id="look-up-sequens-freq-befor"></div>
+                                </div>
+                                <div>
+                                    <div id="look-up-freq-befor"></div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div>
+                            <p></p>
+                            <div class="grid-container">
+                                <div>
+                                    <div id="look-up-sequens-freq-after"></div>
+                                </div>
+                                <div>
+                                    <div id="look-up-freq-after"></div>
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+                        <p></p>
+                        <p></p>
+                        <p></p>
+                        <p>Hardanger 3, Norway</p>
+                        <p></p>
+                        
+            </div>
+            <div>
+                
+                
+            </div>
+            <p></p>
+            <p></p>
+
+
+                    </div>
+                </div> 
+                <p></p> 
+            </div>
+           <!-- <div id="look-up-nummber-freq"></div> -->
+        </div>
+        <div>
+            <div>
+                <p></p>
+                <div class="grid-container">
+                    <div>   
+                        <div id="look-up-sequens-freq-befor"></div>
+                    </div>
+                    <div>
+                        <div id="look-up-freq-befor"></div>
+                    </div>
+                </div>
+                
+            </div>
+            <div>
+                <p></p>
+                <div class="grid-container">
+                    <div>
+                        <div id="look-up-sequens-freq-after"></div>
+                    </div>
+                    <div>
+                        <div id="look-up-freq-after"></div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+
+        </div>
+    </div>
+        
+    <div class="table">
+        <div class="thead fx -bt -md">
+            <h2>Vanligste påfølgende par</h2>
+        </div>
+        <div class="tbody">
+            <ul class="ul-reset stats js-stats">
+                
+                    <li class="_item js-stats-item" data-num="22" data-freq="6" data-ago="1">
+                        <ul class="balls -vikinglotto -lg">
+                            <li class="ball">22</li>
+                            <li class="ball">23</li>
+                        </ul>
+                        <p class="_times">Trukket <span>6 ganger</span></p>
+                    </li>
+                
+                    <li class="_item js-stats-item" data-num="27" data-freq="4" data-ago="106">
+                        <ul class="balls -vikinglotto -lg">
+                            <li class="ball">27</li>
+                            <li class="ball">28</li>
+                        </ul>
+                        <p class="_times">Trukket <span>4 ganger</span></p>
+                    </li>
+                
+                    <li class="_item js-stats-item" data-num="30" data-freq="4" data-ago="176">
+                        <ul class="balls -vikinglotto -lg">
+                            <li class="ball">30</li>
+                            <li class="ball">31</li>
+                        </ul>
+                        <p class="_times">Trukket <span>4 ganger</span></p>
+                    </li>
+                
+                    <li class="_item js-stats-item" data-num="18" data-freq="3" data-ago="43">
+                        <ul class="balls -vikinglotto -lg">
+                            <li class="ball">18</li>
+                            <li class="ball">19</li>
+                        </ul>
+                        <p class="_times">Trukket <span>3 ganger</span></p>
+                    </li>
+                
+                    <li class="_item js-stats-item" data-num="35" data-freq="3" data-ago="64">
+                        <ul class="balls -vikinglotto -lg">
+                            <li class="ball">35</li>
+                            <li class="ball">36</li>
+                        </ul>
+                        <p class="_times">Trukket <span>3 ganger</span></p>
+                    </li>
+                
+                    <li class="_item js-stats-item" data-num="34" data-freq="3" data-ago="204">
+                        <ul class="balls -vikinglotto -lg">
+                            <li class="ball">34</li>
+                            <li class="ball">35</li>
+                        </ul>
+                        <p class="_times">Trukket <span>3 ganger</span></p>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+    
+
+<!--
+    <p style="color: blue;" title="it's me">Hello Viking Fan!!</p>
+    
+    <p></p>
+    <p></p>
+    <div class="container">
+        <p>The w3-container class is an important w3.CSS class.</p>
+      </div>
+-->
+    <!--  <button id="btn">id Button from functionScript</button> -->
+    <p></p>
+    <p></p>
+    <!-- <button onclick="lookUpStats(1,35)">inFunc 35</button> -->
+    <!--  <button onclick="lookUpStats(1,1)">inFunc 1</button> -->
+    <p></p>
+    <div class="content shadow-lg p-3 mb-5 bg-white rounded">
+        <div class="polar">
+            <div class="polaroid">
+                <div class="grid-container">
+                    <ul class="balls -vikinglotto -lg">
+                        <li id="1" class="ball test">1</li>
+                        <li id="2" class="ball test">2</li>
+                        <li id="3" class="ball test">3</li>
+                        <li id="4" class="ball test">4</li>
+                    </ul>
+                </div>
+                <div class="container">
+                <p>Hardanger 2, Norway</p>
+                </div>
+            </div>
+        </div> 
+        <p></p> 
+    </div>
+    <p></p>
+
+    <li class="_item js-stats-item" data-num="22" data-freq="6" data-ago="1">
+        <ul class="balls -vikinglotto -lg">
+            <li class="ball">22</li>
+            <li class="ball">23</li>
+        </ul>
+        <p class="_times">Trukket <span>6 ganger</span></p>
+    </li>
+
+    <div class="grid-container">
+        <div>
+            <div class="table">
+                <div class="thead fx -bt -md">
+                    <h2>Vanligste par</h2>
+                </div>
+                <div class="tbody">
+                    <ul class="ul-reset stats js-stats">
+                        <li class="_item js-stats-item">
+                            <div class="grid-container">
+                                <ul class="balls -vikinglotto -lg">
+                                    <li id="1" class="ball">1</li>
+                                    <li id="2" class="ball">2</li>
+                                    <li id="3" class="ball">3</li>
+                                    <li id="4" class="ball">4</li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <ul class="balls button button1"><li id="1" class="ball">1</li>
+            <ul class="balls button button1"><li id="2" class="ball">2</li>
+            <ul id="3" class="balls button button1"><li class="ball">3</li></ul>
+            <ul id="4" class="balls button button1"><li class="ball">4</li></ul>
+            <ul id="5" class="balls button button1"><li class="ball">5</li></ul>
+
+            <ul id="6" class="balls -vikinglotto -lg button button1"><li class="ball">6</li></ul>
+            <ul id="7" class="balls -vikinglotto -lg button button1"><li class="ball">7</li></ul>
+            <ul id="8" class="balls -vikinglotto -lg button button1"><li class="ball">8</li></ul>
+            <ul id="9" class="balls -vikinglotto -lg button button1"><li class="ball">9</li></ul>
+            <ul id="10" class="balls -vikinglotto -lg button button1"><li class="ball">10</li></ul>
+
+            <!-- <button id="1" class="button button1">1</button> 
+            <button id="2" class="button button1">2</button>
+            <button id="3" class="button button1">3</button>
+            <button id="4" class="button button1">4</button>
+            <button id="5" class="button button1">5</button>
+            <button id="6" class="button button1">6</button>
+            <button id="7" class="button button1">7</button>
+            <button id="8" class="button button1">8</button>
+            <button id="9" class="button button1">9</button>
+            <button id="10" class="button button1">10</button>
+            <button id="11" class="button button1">11</button>
+            <button id="12" class="button button1">12</button>
+            <button id="13" class="button button1">13</button>
+            <button id="14" class="button button1">14</button>
+            <button id="15" class="button button1">15</button>
+            <button id="16" class="button button1">16</button>
+            <button id="17" class="button button1">17</button>
+            <button id="18" class="button button1">18</button>
+            <button id="19" class="button button1">19</button>
+            <button id="20" class="button button1">20</button>
+            <button id="21" class="button button1">21</button>
+            <button id="22" class="button button1">22</button>
+            <button id="23" class="button button1">23</button>
+            <button id="24" class="button button1">24</button>
+            <button id="25" class="button button1">25</button>
+            <button id="26" class="button button1">26</button>
+            <button id="27" class="button button1">27</button>
+            <button id="28" class="button button1">28</button>
+            <button id="29" class="button button1">29</button>
+            <button id="30" class="button button1">30</button>
+            <button id="31" class="button button1">31</button>
+            <button id="32" class="button button1">32</button>
+            <button id="33" class="button button1">33</button>
+            <button id="34" class="button button1">34</button>
+            <button id="35" class="button button1">35</button>
+            <button id="36" class="button button1">36</button>
+            <button id="37" class="button button1">37</button>
+            <button id="38" class="button button1">38</button>
+            <button id="39" class="button button1">39</button>
+            <button id="40" class="button button1">40</button>
+            <button id="41" class="button button1">41</button>
+            <button id="42" class="button button1">42</button>
+            <button id="43" class="button button1">43</button>
+            <button id="44" class="button button1">44</button>
+            <button id="45" class="button button1">45</button>
+            <button id="46" class="button button1">46</button>
+            <button id="47" class="button button1">47</button>
+            <button id="48" class="button button1">48</button> -->
+        </div>
+    <div>
+        <button id="ex_1" class="button button2">1</button>
+        <button id="ex_2" class="button button2">2</button>
+        <button id="ex_3" class="button button2">3</button>
+        <button id="ex_4" class="button button2">4</button>
+        <button id="ex_5" class="button button2">5</button>
+    </div>
+      </div>
+
+        
+    
+    
+    
+      
+    
+    
+    
+    
+
+    
+    
+    <script src="./jquery/jquery-3.6.0.js"></script>
+
+    <!-- Main Script 
+        "MenuArg(1,value) Look up a number info -arg {number} \n" +
+            "MenuArg(2) prints list with -arg{ 1 hole list} \n" +
+            "MenuArg(3) prints list with -arg{ 2 freq > 0}  \n" +
+            "MenuArg(4,value) prints list with -arg{ 3 freq > value} eks 4,value where freq > value \n" +
+            "MenuArg(5) prints the winning row list \n" +
+            "MenuArg(6,value) prints Set's of frequency -arg{ 6 , ValueNumber } freq numbers drawn befor and after \n" +
+            "7 prints Set's All (1 - 48) all set's of frequency \n\n");
+    -->
+    <script src="./scripts/vikingLottoScript.js"></script>
+    <!-- -->
+    <script src="./scripts/functionScript.js"></script>
+    
+    <!-- Animation test
+    <script src="anime.min.js"></script>
+    -->
+    
+</body>
+</html>
