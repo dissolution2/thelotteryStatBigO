@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel='stylesheet' href='/stylesheets/test.css' />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <script>
+    // index 0 = first number of vikingNumbesr, index = 6 last Extra viking Number
+  //   function getFreqNumber(index,number){
+  //       console.log('index: ',index , ' number: ', number);
+  //   }
+  // function open_new_window(path, params, method='post') {
+  
+  //   console.log('loged: ', params);
+
+  //   const form = document.createElement('form');
+  //   form.method = method;
+  //   form.action = path;
+
+  //   for(const key in params){
+  //     if(params.hasOwnProperty(key)){
+  //       const hiddenField = document.createElement('input');
+  //       hiddenField.type = 'hidden';
+  //       hiddenField.name = key;
+  //       hiddenField.value = params[key];
+
+  //       form.appendChild(hiddenField);
+  //     }
+  //   }
+  //   document.body.appendChild(form);
+  //   form.submit();
+  // }
+
+    
+    function chkcontrol(j) {
+      var checkboxes = document.querySelectorAll('input[type="checkbox"]'); //('input[id^="mktoCheckbox"]');
+      var active = document.querySelectorAll('input[type="checkbox"]:checked');
+      // console.log('unchecked:', checkboxes);
+      // console.log('active:', active);
+      var numActive = active.length;
+      if (numActive !== 3) {
+        console.log('we are not 3 checked');
+        for (var i = 0; i < checkboxes.length; i++) {
+          if (checkboxes[i].checked != true) {
+            checkboxes[i].disabled = false;
+          }
+        }
+      } else {
+        for (var i = 0; i < checkboxes.length; i++) {
+          if (checkboxes[i].checked != true) {
+            checkboxes[i].disabled = true;
+          }
+        }
+      }
+    }
+  </script>
+<!-- data.numbers -->
+
+  <div class="content shadow-lg p-3 mb-5 bg-light rounded">
+    <!-- Larger shadow -->
+    
+        <p>Chose 3 numbers max as preferd numbers</p>
+        <table>
+          <tbody>
+             <tr>
+               <td><div class="content shadow-sm p-3 mb-5 bg-white rounded">Box_1
+                <div class="polaroid">
+                  <div class="form-group row">
+                    <div class="col-sm-10">
+                      <form class="form-horizontal" name="random_gen_cup" action="http://localhost:3000/random"
+                        method="POST">
+                        
+                        <% for(let i=1; i < 49;i++) { %>
+                          <label class="checkbox-container">
+                            <input type="checkbox" name="<%=i%>" value="<%=i%>" onclick="chkcontrol('<%=i%>')">
+                            <span class="checkbox-indicator">
+                              <%=i%>
+                            </span>
+                          </label>
+                      <%}%>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <div class="col-sm-10">
+                      <button class="btn btn-primary pull-right">Generate Cupong</button>
+                    </div>
+                  </div>
+                  </form>
+                 </div>
+               </div></td>
+               <td><div class="content shadow-sm p-3 mb-5 bg-white rounded">Box_2
+                <div class="form-group row">
+                  <div class="col-sm-10">
+                    <form class="form-horizontal" name="random_gen_cup" action="http://localhost:3000/random"
+                                  method="POST">
+                                  
+                                  <% for(let i=1; i < 49;i++) { %>
+                                    <label class="checkbox-container">
+                                      <input type="checkbox" name="<%=i%>" value="<%=i%>" onclick="chkcontrol('<%=i%>')">
+                                      <span class="checkbox-indicator">
+                                        <%=i%>
+                                      </span>
+                                    </label>
+                                <%}%>
+                              </div>
+                            </div>
+                            <div class="form-group row">
+                              <div class="col-sm-10">
+                                <button class="btn btn-primary pull-right">Get Data on a number</button>
+                              </div>
+                            </div>
+                            </form>
+                  </div>
+                </div>
+               </div></td>
+               
+             </tr>
+        </tbody>
+        </table>
+                
+  <!-- number info  -->
+      
+  </div>
+  <!-- data.random -->
+  <div class="content shadow-lg p-3 mb-5 bg-light rounded">
+    <div class="polaroid">
+      <div class="form-group row">
+        <div class="col-sm-10">
+          <%if (locals.data.random) { %>
+            <p>Random row Generate:</p>
+            <form class="form-horizontal" name="random_gen_cup" action="http://localhost:3000/freqDrawn" method="post">
+            <% for(let r=0; r < data.random.length;r++ ) { %>
+              
+                <label class="checkbox-container_r">
+                  <input name="<%=data.random[r]%>" value="<%=data.random[r]%>:<%=r%>" type="submit" value="submit">
+                  <span class="checkbox-indicator_r">
+                    <%=data.random[r]%>
+                  </span>
+                </label>
+              <% } %>
+            </form>
+          <% } %>
+        </div> 
+      </div> 
+    </div>   
+  </div> 
+<!-- data.number &&  -->
+  <div class="content shadow-lg p-3 mb-5 bg-light rounded">
+    <div class="polaroid">
+      <div class="form-group row">
+        <div class="col-sm-10">
+          <p>Data: (Main)Frequens = frequens that number been drawn</p>
+          <%if (locals.data.freqnumber) { %>
+              <p>Main number: <%=data.freqnumber.number%></p>
+              <p>Frequens drawn: <%=data.freqnumber.freq%></p>
+              <p>Days since last drawn: <%=data.freqnumber.days[1]%></p>
+          <% } %>
+          
+          
+          <%if (locals.data.number) { %>
+            <% if (data.number> 0 && data.number < 49) { %>
+                <p>NumberValue: <%=data.number%>
+                </p>
+                <p>Drawn Befor: <%=data.number%> { 0 = Number is first to be drawn }</p>
+                <form class="form-horizontal" name="random_gen_cup" action="http://localhost:3000/freqNumber" method="post">
+                <% for (var [key, value] of data.befor ) { %>
+                  <label class="checkbox-container_r">
+                    <input name="<%=key%>" value="<%=key%>" type="submit" value="submit"><%=value%>
+                    <span class="checkbox-indicator_r">
+                      <%=key%>
+                    </span>
+                  </label>
+                  <% } %>
+                </form>
+                  <p>Drawn After: <%=data.number%> { 0 = Number is last to be drawn }</p>
+                  <form class="form-horizontal" name="random_gen_cup" action="http://localhost:3000/freqNumber" method="post"></form>
+                    <% for (var [key, value] of data.after ) { %>
+                    <label class="checkbox-container_r">
+                    <input name="<%=key%>" value="<%=key%>" type="submit" value="submit"><%=value%>
+                    <span class="checkbox-indicator_r">
+                      <%=key%>
+                    </span>
+                  </label>
+                      <% } %>
+                    </form>
+                        <% } else { %>
+                          <p> data not valid check you input </p>
+                          <% } %>
+                            <% } %>
+        </div> 
+      </div>
+       
+    </div>
+  </div>
+
+
+  <div class="content shadow-lg p-3 mb-5 bg-light rounded">
+    <div class="polaroid">
+      <div class="form-group row">
+        <div class="col-sm-10">
+          <%if (locals.data.prizes) { %>
+            <% for (var [key, value] of data.prizes ) { %>
+              <p>Prize: (<%=key%>)</p>
+              <% for(let i=0; i < value.length;i++ ) { %>
+                <!-- value is an array [[],[],[]] etc  -->
+      
+                <% for(let j=0; j < value[i].length;j++ ) { %>
+                  <% if(j !==7 ) {%>
+                    <label class="checkbox-container_p">
+                      <input name="<%=value[i][j]%>" value="<%=value[i][j]%>">
+                      <span class="checkbox-indicator_p">
+                        <%=value[i][j]%>
+                      </span>
+                    </label>
+                    <% } else { %>
+                      <p>[ <%=value[i][j]%> ]</p>
+                      <% } %>
+                        <% } %>
+                          <% } %>
+                            <% } %>
+                              <p></p>
+                              <%}%>
+        </div> 
+      </div>   
+    </div>
+  </div>
+  
+</body>
+
+</html>

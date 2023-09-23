@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel='stylesheet' href='/stylesheets/test.css' />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <script>
+    // function refreshPage(){
+    //     window.location.reload();
+    // } 
+    function chkcontrol(j) {
+      var checkboxes = document.querySelectorAll('input[type="checkbox"]'); //('input[id^="mktoCheckbox"]');
+      var active = document.querySelectorAll('input[type="checkbox"]:checked');
+      // console.log('unchecked:', checkboxes);
+      // console.log('active:', active);
+      var numActive = active.length;
+
+      if (numActive !== 3) {
+        console.log('we are not 3 checked');
+        for (var i = 0; i < checkboxes.length; i++) {
+          if (checkboxes[i].checked != true) {
+            checkboxes[i].disabled = false;
+          }
+        }
+      } else {
+        for (var i = 0; i < checkboxes.length; i++) {
+          if (checkboxes[i].checked != true) {
+            checkboxes[i].disabled = true;
+          }
+        }
+      }
+
+    }
+  </script>
+  <!-- dont need the id of i to chkcontrol() but keep maybe for later !! -->
+  <div class="content shadow-none p-3 mb-5 bg-light rounded">
+    <div class="form-group row">
+      <div class="col-sm-10">
+        <p>Chose 3 numbers max as preferd numbers</p>
+        <form name="random_gen_cup" action="http://localhost:3000/random" method="POST">
+          <% for(let i=1; i < 49;i++) { %>
+            <label class="checkbox-container">
+              <input type="checkbox" name="<%=i%>" value="<%=i%>" onclick="chkcontrol('<%=i%>')">
+              <span class="checkbox-indicator">
+                <%=i%>
+              </span>
+            </label>
+            <%}%>
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-sm-10">
+        <button class="btn btn-primary pull-right">Generate Cupong</button>
+      </div>
+      <!-- </div> -->
+      <!-- <button class="btn btn-primary pull-right">Generate Cupong</button> -->
+      <!-- <button type="submit" onClick="refreshPage()">Refresh Button to keap chosen spesial numbers</button> -->
+
+      </form>
+      <%if (locals.data.number) { %>
+        <% if (data.number> 0 && data.number < 49) { %>
+            <p>NumberValue: <%=data.number%>
+            </p>
+            <% for (var [key, value] of data.befor ) { %>
+              <p>Befor number: <%=key%> frequency drawn <%=value%>
+              </p>
+              <% } %>
+                <% for (var [key, value] of data.after ) { %>
+                  <p>After number: <%=key%> frequency drawn <%=value%>
+                  </p>
+                  <% } %>
+                    <% } else { %>
+                      <p> data not valid check you input </p>
+                      <% } %>
+                        <% } %>
+    </div>
+    <!-- data.random [] -->
+    <!-- <div class="content shadow p-3 mb-5 bg-white rounded"> -->
+    <div class="form-group row">
+      <div class="col-sm-10">
+        <%if (locals.data.random) { %>
+          <p>Random row Generate:</p>
+          <% for(let r=0; r < data.random.length;r++ ) { %>
+            <label class="checkbox-container_r">
+              <input name="<%=data.random[r]%>" value="<%=data.random[r]%>">
+              <span class="checkbox-indicator_r">
+                <%=data.random[r]%>
+              </span>
+            </label>
+            </td>
+            <% } %>
+              <!-- <hr class="solid"> -->
+              <% } %>
+      </div>
+    </div>
+    </div>
+    <p></p>
+    
+    <p></p>
+  </div>
+
+  <p></p>
+  <div class="content shadow p-3 mb-5 bg-white rounded">
+    <%if (locals.data.prizes) { %>
+      <% for (var [key, value] of data.prizes ) { %>
+        <p>Prize: (<%=key%>)</p>
+        <% for(let i=0; i < value.length;i++ ) { %>
+          <!-- value is an array [[],[],[]] etc  -->
+
+          <% for(let j=0; j < value[i].length;j++ ) { %>
+            <% if(j !==7 ) {%>
+              <label class="checkbox-container_p">
+                <input name="<%=value[i][j]%>" value="<%=value[i][j]%>">
+                <span class="checkbox-indicator_p">
+                  <%=value[i][j]%>
+                </span>
+              </label>
+              <% } else { %>
+                <p>[ <%=value[i][j]%> ]</p>
+                <% } %>
+                  <% } %>
+                    <% } %>
+                      <% } %>
+                        <p></p>
+                        <%}%>
+  </div>
+  </div>
+
+
+  <div class="content shadow-none p-3 mb-5 bg-light rounded">
+    <table>
+     <tbody>
+        <tr>
+          <td><div class="content shadow-lg p-3 mb-5 bg-white rounded">
+              <div class="polaroid">
+              <a>Name</a>
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSghBo_E3yAiE6Cmmn06jdQ2EuxWepQ7Z0oYJpp0-X2-w&amp;s" alt="Norway" style="width:100%">
+                <div class="container">
+                  <p>Hardanger 1, Norway</p>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td><div class="content shadow-lg p-3 mb-5 bg-white rounded">
+              <div class="polaroid">
+              <a>Name</a>
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSghBo_E3yAiE6Cmmn06jdQ2EuxWepQ7Z0oYJpp0-X2-w&amp;s" alt="Norway" style="width:100%">
+                <div class="container">
+                  <p>Hardanger 1, Norway</p>
+                </div>
+              </div>
+            </div>
+              
+          </td>
+        </tr>
+     </tbody>
+    </table>
+</div>
+</body>
+
+</html>
