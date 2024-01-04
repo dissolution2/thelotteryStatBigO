@@ -10,6 +10,7 @@ let set_globals = require('./logic/globals.js'); // sett all globals for logic
 set_globals(); //
 /** Logic viking lotto */
 
+
 /** start data insertion */
 require('./logic/insert.js'); // dose this one time every time, server start
 /** start data insertion */
@@ -33,15 +34,6 @@ require('./logic/insert.js'); // dose this one time every time, server start
 /** test on last days since last drawn */
 
 
-
-// test on globals
-// console.log('globals: vikingMainLotto: ', winningVikingRow); // winnings rows -> actual data base
-// console.log('globals: vikingMainLotto: ', vikingMainLotto); //Map() last Date() number ben drawn check this up agains data function
-// console.log('globals: numberSetsFrequensVikingTall: ', numberSetsFrequensVikingTall); // after - befor : frequens 
-// console.log('globals: numberFrequensVikingMainLotto: ',  numberFrequensVikingMainLotto); // how many times Main number have been drawn 
-
-
-/** run test main script */ 
 
 const run_viking_test = require('./logic/test_run_logic.js'); // get test run script
 run_viking_test(); // run test

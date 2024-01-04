@@ -2,6 +2,7 @@ let numberFrequensSetsClass = require('./class.js');
 
 module.exports =  function set_globals(){
 
+global.length_Of_Random = 0;
 global.vikingMainLotto = new Map();  // 1 - 48
 global.vikingTall = new Map(); // 1 - 5
 

@@ -1,6 +1,6 @@
 /* @ return [] input numper, pol, exclude_1..2..3 */
 
-function vikingRandomGenerator(number, pol, excludeNumber_one, excludeNumber_two, excludeNumber_thre){
+function vikingRandomGenerator(number, pol, excludeNumber_one, excludeNumber_two, excludeNumber_thre,excludeNumber_fire,excludeNumber_five,excludeNumber_six){
     let num = [];
     
     if(typeof excludeNumber_one == 'number'){
@@ -15,6 +15,18 @@ function vikingRandomGenerator(number, pol, excludeNumber_one, excludeNumber_two
     if(typeof excludeNumber_thre == 'number'){
         // console.log("ex3 = number: ", excludeNumber_thre);
         num.push(excludeNumber_thre) 
+    }
+    if(typeof excludeNumber_fire == 'number'){
+        // console.log("ex3 = number: ", excludeNumber_thre);
+        num.push(excludeNumber_fire) 
+    }
+    if(typeof excludeNumber_five == 'number'){
+        // console.log("ex3 = number: ", excludeNumber_thre);
+        num.push(excludeNumber_five) 
+    }
+    if(typeof excludeNumber_six == 'number'){
+        // console.log("ex3 = number: ", excludeNumber_thre);
+        num.push(excludeNumber_six) 
     }
 
     // console.log("number asked: ", number);

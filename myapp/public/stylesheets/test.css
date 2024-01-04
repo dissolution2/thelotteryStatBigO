@@ -12,9 +12,11 @@ main {
 }
 @media (min-width: 1024px){
     .content {
+        margin-top: 1rem;
         margin: -36px 0 0;
     }
     .content {
+        margin-top: 1rem;
         background: #fff;
         padding: 20px 40px 60px;
         padding-top: 60px;
@@ -39,7 +41,9 @@ main {
 
 .table {
     width: 100%;
+    margin-top: 20rem;
     margin-bottom: 40px;
+
 }
 .table, .table-wrap, table {
     box-shadow: 0 0 40px rgb(26 26 26 / 25%);

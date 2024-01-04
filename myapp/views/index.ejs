@@ -38,16 +38,37 @@
   //   document.body.appendChild(form);
   //   form.submit();
   // }
+  function chkcontrol_extra(){
+    
+    var checkbox_extra = document.querySelectorAll('input[id^="checkbox_extra"]'); //('input[id^="mktoCheckbox"]');
+    var active_extra = document.querySelectorAll('input[id^="checkbox_extra"]:checked');
+    var numActive_extra = active_extra.length;
+      if (numActive_extra !== 1) {
+        console.log('we are not 1 checked');
+        for (var i = 0; i < checkbox_extra.length; i++) {
+          if (checkbox_extra[i].checked != true) {
+            checkbox_extra[i].disabled = false;
+          }
+        }
+      } else {
+        for (var i = 0; i < checkbox_extra.length; i++) {
+          if (checkbox_extra[i].checked != true) {
+            checkbox_extra[i].disabled = true;
+          }
+        }
+      }
 
+  }
     
     function chkcontrol(j) {
-      var checkboxes = document.querySelectorAll('input[type="checkbox"]'); //('input[id^="mktoCheckbox"]');
-      var active = document.querySelectorAll('input[type="checkbox"]:checked');
+      // get form id / class and do the check from there on all checkbox's etc  or do id^=random / id^=frq etc ??
+      var checkboxes = document.querySelectorAll('input[id^="checkbox_numbers"]'); // ('input[type="checkbox"]'); ('input[id^="mktoCheckbox"]');
+      var active = document.querySelectorAll('input[id^="checkbox_numbers"]:checked'); // ('input[type="checkbox"]:checked');)
       // console.log('unchecked:', checkboxes);
       // console.log('active:', active);
       var numActive = active.length;
-      if (numActive !== 3) {
-        console.log('we are not 3 checked');
+      if (numActive !== 6) {
+        console.log('we are not 4 checked');
         for (var i = 0; i < checkboxes.length; i++) {
           if (checkboxes[i].checked != true) {
             checkboxes[i].disabled = false;
@@ -67,44 +88,82 @@
   <div class="content shadow-lg p-3 mb-5 bg-light rounded">
     <!-- Larger shadow -->
     
-        <p>Chose 3 numbers max as preferd numbers</p>
+        <p>Test production: </p>
         <table>
           <tbody>
              <tr>
-               <td><div class="content shadow-sm p-3 mb-5 bg-white rounded">Box_1
+               <td><div class="content shadow-sm p-3 mb-5 bg-white rounded">
                 <div class="polaroid">
                   <div class="form-group row">
-                    <div class="col-sm-10">
-                      <form class="form-horizontal" name="random_gen_cup" action="http://localhost:3000/random"
+                    <div class="col-sm-10 col-md-6">
+                      <h4>Chose max 6 number and 1 Extra number</h4>
+                      <form class="form-horizontal" id="form-horizontal" name="random_gen_cup" action="http://localhost:3000/random"
                         method="POST">
                         
                         <% for(let i=1; i < 49;i++) { %>
                           <label class="checkbox-container">
-                            <input type="checkbox" name="<%=i%>" value="<%=i%>" onclick="chkcontrol('<%=i%>')">
+                            <input id="checkbox_numbers" type="checkbox" name="<%=i%>" value="<%=i%>" onclick="chkcontrol('<%=i%>')">
                             <span class="checkbox-indicator">
                               <%=i%>
                             </span>
                           </label>
                       <%}%>
+                      <% for(let j=1; j < 6;j++) { %>
+                        <label class="checkbox-container_extra_num">
+                          <input id="checkbox_extra" type="checkbox" name="ex" value="<%=j%>" onclick="chkcontrol_extra('<%=j%>')">
+                          <span class="checkbox-indicator_extra_num">
+                            <%=j%>
+                          </span>
+                        </label>
+                    <%}%>
+                    
+                    </form>
                     </div>
-                  </div>
-                  <div class="form-group row">
-                    <div class="col-sm-10">
-                      <button class="btn btn-primary pull-right">Generate Cupong</button>
-                    </div>
-                  </div>
-                  </form>
-                 </div>
-               </div></td>
-               <td><div class="content shadow-sm p-3 mb-5 bg-white rounded">Box_2
-                <div class="form-group row">
-                  <div class="col-sm-10">
-                    <form class="form-horizontal" name="random_gen_cup" action="http://localhost:3000/random"
+                    <!-- here should be button and end of form 1 ?? with inn its own col-sm-10 etc -->
+                    <div class="col-sm-10 col-md-6">
+                      <h4>1:Freq 2:Pair 3:triples</h4>
+                      <form class="form-horizontal_2" id="form-horizontal_2" name="test" action="http://localhost:3000/test"
                                   method="POST">
                                   
                                   <% for(let i=1; i < 49;i++) { %>
                                     <label class="checkbox-container">
-                                      <input type="checkbox" name="<%=i%>" value="<%=i%>" onclick="chkcontrol('<%=i%>')">
+                                      <input id="checkbox_numbers" type="checkbox" name="<%=i%>" value="<%=i%>" onclick="chkcontrol('<%=i%>')">
+                                      <span class="checkbox-indicator">
+                                        <%=i%>
+                                      </span>
+                                    </label>
+                                <%}%>
+                              </div>
+                            </div>
+                            <!-- <div class="form-group row">
+                              <div class="col-sm-10">
+                                <button class="btn btn-primary pull-right">test for now!!</button>
+                              </div>
+                            </div> -->
+                        </form>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <div class="col-sm-10 col-md-6">
+                      <button class="btn btn-primary pull-right" type="submit" form="form-horizontal">Generate Cupong</button>
+                    </div>
+                      <div class="col-sm-10 col-md-6">
+                        <button class="btn btn-primary pull-right" type="submit" form="form-horizontal_2">test freq</button>
+                      </div>
+                    </div>
+                  
+                 </div>
+               </div></td>
+               <!--  -->
+               <td><div class="content shadow-sm p-3 mb-5 bg-white rounded">Box_2
+                <div class="form-group row">
+                  <div class="col-sm-10 col-md-6">
+                    <form class="form-horizontal" name="random_gen_cup" action="http://localhost:3000/test"
+                                  method="POST">
+                                  
+                                  <% for(let i=1; i < 49;i++) { %>
+                                    <label class="checkbox-container">
+                                      <input id="checkbox_numbers" type="checkbox" name="<%=i%>" value="<%=i%>" onclick="chkcontrol('<%=i%>')">
                                       <span class="checkbox-indicator">
                                         <%=i%>
                                       </span>
@@ -114,10 +173,10 @@
                             </div>
                             <div class="form-group row">
                               <div class="col-sm-10">
-                                <button class="btn btn-primary pull-right">Get Data on a number</button>
+                                <button class="btn btn-primary pull-right">test for now!!</button>
                               </div>
                             </div>
-                            </form>
+                    </form>
                   </div>
                 </div>
                </div></td>
@@ -133,19 +192,38 @@
   <div class="content shadow-lg p-3 mb-5 bg-light rounded">
     <div class="polaroid">
       <div class="form-group row">
-        <div class="col-sm-10">
+        <div class="col-sm-10 col-md-6">
           <%if (locals.data.random) { %>
-            <p>Random row Generate:</p>
+            <p>Random row Generated: <%=locals.data.length%> Chosen Numbers</p>
             <form class="form-horizontal" name="random_gen_cup" action="http://localhost:3000/freqDrawn" method="post">
             <% for(let r=0; r < data.random.length;r++ ) { %>
-              
-                <label class="checkbox-container_r">
+              <% if( r === 6 ) { %>
+                <!-- Viking Extra number -->
+                <label class="checkbox-container_extra_num">
                   <input name="<%=data.random[r]%>" value="<%=data.random[r]%>:<%=r%>" type="submit" value="submit">
-                  <span class="checkbox-indicator_r">
+                  <span class="checkbox-indicator_extra_num">
                     <%=data.random[r]%>
                   </span>
                 </label>
-              <% } %>
+              <% } else { %>  
+                <%  if(r < locals.data.length ){ %>
+                  <!-- the is the chosen numbers -->
+                  <label class="checkbox-container_user">
+                    <input name="<%=data.random[r]%>" value="<%=data.random[r]%>:<%=r%>" type="submit" value="submit">
+                    <span class="checkbox-indicator_user">
+                      <%=data.random[r]%>
+                    </span>
+                  </label>
+                  <%  } else { %>
+                  <label class="checkbox-container_r">
+                    <input name="<%=data.random[r]%>" value="<%=data.random[r]%>:<%=r%>" type="submit" value="submit">
+                    <span class="checkbox-indicator_r">
+                      <%=data.random[r]%>
+                    </span>
+                  </label>
+                  <% } %>  
+                <% } %>
+             <% } %>
             </form>
           <% } %>
         </div> 
@@ -156,7 +234,7 @@
   <div class="content shadow-lg p-3 mb-5 bg-light rounded">
     <div class="polaroid">
       <div class="form-group row">
-        <div class="col-sm-10">
+        <div class="col-sm-10 col-md-6">
           <p>Data: (Main)Frequens = frequens that number been drawn</p>
           <%if (locals.data.freqnumber) { %>
               <p>Main number: <%=data.freqnumber.number%></p>
@@ -201,25 +279,67 @@
     </div>
   </div>
 
-
+<!-- prizes  -->
   <div class="content shadow-lg p-3 mb-5 bg-light rounded">
     <div class="polaroid">
       <div class="form-group row">
-        <div class="col-sm-10">
+        <div class="col-sm-10 col-md-6">
           <%if (locals.data.prizes) { %>
             <% for (var [key, value] of data.prizes ) { %>
-              <p>Prize: (<%=key%>)</p>
+              <% if (key === 1 ) { %>
+                <p>Prize: <%=key%>: (6 Numbers + Extra Number)</p>  
+                <hr>
+              <% } %>
+              <% if (key === 2 ) { %>
+                <p>Prize: <%=key%>: (6 Numbers)</p>
+                <hr>  
+              <% } %>
+              <% if (key === 3 ) { %>
+                <p>Prize: <%=key%>: (5 Numbers + Extra Number)</p>
+                <hr>  
+              <% } %>
+              <% if (key === 4 ) { %>
+                <p>Prize: <%=key%>: (5 Numbers)</p>
+                <hr>  
+              <% } %>
+              <% if (key === 5 ) { %>
+                <p>Prize: <%=key%>: (4 Numbers)</p>
+                <hr>  
+              <% } %>
+              <% if (key === 6 ) { %>
+                <p>Prize: <%=key%>: (3 Numbers )</p>  
+                <hr>
+              <% } %>
+              
               <% for(let i=0; i < value.length;i++ ) { %>
                 <!-- value is an array [[],[],[]] etc  -->
       
                 <% for(let j=0; j < value[i].length;j++ ) { %>
-                  <% if(j !==7 ) {%>
-                    <label class="checkbox-container_p">
-                      <input name="<%=value[i][j]%>" value="<%=value[i][j]%>">
-                      <span class="checkbox-indicator_p">
-                        <%=value[i][j]%>
-                      </span>
-                    </label>
+                  <% if(j !==7 ) {%> <!-- date -->
+                    <!-- check which numbers in prize row is in the random row generated !! Begin-->
+                    <% let found = 0; %>
+                    <% for(let r=0; r < data.random.length;r++ ) { %>
+                      <% if (value[i][j] === data.random[r] && j !== 6 && r !==6 || ( j === 6 && r === 6 && value[i][j] === data.random[r])) { %>
+                       <% found = 1 %>
+                      <% } %>
+                    <% } %>
+                      <% if (found === 1) { %>
+                        <label class="checkbox-container_p_found">
+                          <input name="<%=value[i][j]%>" value="<%=value[i][j]%>">
+                          <span class="checkbox-indicator_p_found">
+                            <%=value[i][j]%>
+                          </span>
+                        </label>
+                        <% found = 0 %>
+                      <% } else { %>
+                        <label class="checkbox-container_p">
+                          <input name="<%=value[i][j]%>" value="<%=value[i][j]%>">
+                          <span class="checkbox-indicator_p">
+                            <%=value[i][j]%>
+                          </span>
+                        </label>
+                      <% }  %>
+                      <!-- check which numbers in prize row is in the random row generated !! End-->
                     <% } else { %>
                       <p>[ <%=value[i][j]%> ]</p>
                       <% } %>
